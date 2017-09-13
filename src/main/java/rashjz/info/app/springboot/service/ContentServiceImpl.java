@@ -4,18 +4,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.annotation.Transactional;
 import rashjz.info.app.springboot.model.Content;
 import rashjz.info.app.springboot.repository.ContentRepository;
 import rashjz.info.app.springboot.repository.ContentTypeRepository;
 
 @Service("contentService")
+@EnableTransactionManagement
 public class ContentServiceImpl implements ContentService {
 
-    @Autowired(required=true)
+    @Autowired
     private ContentRepository contentRepository;
 
-    @Autowired(required=true)
+    @Autowired
     private ContentTypeRepository contentTypeRepository;
 
 

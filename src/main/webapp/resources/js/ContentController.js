@@ -43,7 +43,8 @@ angular.module('taskManagerApp').controller('ContentController',
         function getAllContentTypes() {
             ContentService.loadContentTypes().then(
                 function (response) {
-                    $scope.contentTypes = response.data._embedded.contentTypes;
+                    // $scope.contentTypes = response.data._embedded.contentTypes;
+                    $scope.contentTypes = response;
                     console.log(JSON.stringify($scope.contentTypes) + '***************************');
                 }, function (error) {
                     console.log(error + " error  during service call")

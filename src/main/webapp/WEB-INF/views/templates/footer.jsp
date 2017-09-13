@@ -1,6 +1,3 @@
-<div th:fragment="footer">
-
-
     <footer class="site-footer navbar-default">
         <hr/>
         <div class="container">
@@ -40,6 +37,3 @@
             </div>
         </div>
     </footer>
-
-
-</div>

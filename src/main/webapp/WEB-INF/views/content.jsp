@@ -1,5 +1,3 @@
-<div th:fragment="content">
-
     <div class="container">
         <div ng-controller="ContentController" style="margin-top: 7%;">
 
@@ -59,4 +57,3 @@
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/ContentService.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/ContentController.js"></script>
 
-</div>

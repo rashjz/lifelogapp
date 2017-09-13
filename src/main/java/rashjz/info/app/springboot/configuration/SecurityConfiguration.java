@@ -27,7 +27,6 @@ import javax.sql.DataSource;
 @PropertySource("classpath:application.properties")
 @ComponentScan(basePackages = "rashjz.info.app.springboot")
 @EnableJpaRepositories(basePackages = "rashjz.info.app.springboot")
-
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private Environment environment;
@@ -74,9 +73,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 				.antMatchers("/apicontent/**").permitAll()
 				.antMatchers("/apiuser/**").permitAll()
 				.antMatchers("/task").permitAll()
-				.antMatchers("/index").permitAll()
-				.antMatchers("/registration").permitAll()
-				.antMatchers("/admin/**").hasAuthority("ADMIN").anyRequest()
+				.antMatchers("/register").permitAll()
+				.antMatchers("/user").hasAuthority("USER").anyRequest()
 				.authenticated().and().csrf().disable().formLogin()
 				.loginPage("/login").failureUrl("/login?error=true")
 				.defaultSuccessUrl("/")

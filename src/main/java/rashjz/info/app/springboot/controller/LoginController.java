@@ -23,14 +23,14 @@ public class LoginController {
 
     @GetMapping(value = {"/login"})
     public String login(ModelMap modelMap) {
-        modelMap.addAttribute("content", "login");
+        modelMap.addAttribute("content", "login.jsp");
         return "index";
     }
 
-    @GetMapping("/registration")
+    @GetMapping("/register")
     public String registration(ModelMap modelMap) {
         modelMap.addAttribute("user", new User());
-        modelMap.addAttribute("content", "registration");
+        modelMap.addAttribute("content", "registration.jsp");
         return "index";
     }
 
@@ -48,7 +48,7 @@ public class LoginController {
             modelMap.addAttribute("successMessage", "User has been registered successfully");
             modelMap.addAttribute("user", new User());
         }
-        modelMap.addAttribute("content", "registration");
+        modelMap.addAttribute("content", "registration.jsp");
         return "index";
     }
 
