@@ -9,10 +9,14 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import rashjz.info.app.springboot.model.Role;
 import rashjz.info.app.springboot.model.User;
+import rashjz.info.app.springboot.repository.RoleRepository;
 import rashjz.info.app.springboot.service.UserService;
 
 import javax.validation.Valid;
+import java.util.HashSet;
+import java.util.Set;
 
 @Controller
 public class LoginController {
@@ -21,6 +25,9 @@ public class LoginController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private RoleRepository roleRepository;
 
     @GetMapping(value = {"/login"})
     public String login(ModelMap modelMap) {
@@ -46,7 +53,12 @@ public class LoginController {
         user.setEmail(email);
         user.setPassword(password);
         user.setLastName(lastname);
-        User userExists = userService.findUserByEmail(user.getEmail());
+        Role role = roleRepository.getByKey(Integer.valueOf(1));
+        System.out.println(role.getId()+"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+        Set<Role> roles=new HashSet<>();
+        roles.add(role);
+        user.setRoles(roles);
+//        User userExists = userService.findUserByEmail(user.getEmail());
 
         logger.info("useeeeeeeeeeeeeeeerrr " + user.toString());
         userService.saveUser(user);

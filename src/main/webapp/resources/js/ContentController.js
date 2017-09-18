@@ -8,13 +8,9 @@ angular.module('taskManagerApp').controller('ContentController',
         $scope.content = {};
 
 
-        // $scope.$watch('content.insertDate', function (val) {
-        //     console.log(val)
-        // });
-        //loading types
-        getAllContentTypes();
+            getAllContentTypes();
 
-        $scope.change = function (text) {
+        $scope.change = function () {
             getAllPosts()
         };
 
@@ -24,7 +20,7 @@ angular.module('taskManagerApp').controller('ContentController',
                 function (response) {
                     console.log("-------------- $scope.searchTerm " + $scope.searchTerm + " $scope.currentPage " + $scope.currentPage  + " $scope.itemsPerPage " + $scope.itemsPerPage);
                     $scope.posts = response.data.posts;
-                    $scope.totalItems = response.data.totalElements;
+                    $scope.totalItems = response.data.totalItems;
                     console.log(JSON.stringify(response) + " zzzzzzzzzzzzzzzzzzzzzzz")
                 }, function (error) {
                     console.log(error + " error  during service call")
@@ -45,9 +41,7 @@ angular.module('taskManagerApp').controller('ContentController',
         function getAllContentTypes() {
             ContentService.loadContentTypes().then(
                 function (response) {
-                    // $scope.contentTypes = response.data._embedded.contentTypes;
                     $scope.contentTypes = response.data;
-                    console.log(JSON.stringify($scope.contentTypes) + '***************************');
                 }, function (error) {
                     console.log(error + " error  during service call")
                     $scope.contentTypes = [];
@@ -62,7 +56,6 @@ angular.module('taskManagerApp').controller('ContentController',
                     controller: 'ModalDialogController',
                 }).result.then(
                     function (success) {
-                        // console.log("OK");
                         ContentService.deleteContent($scope.content.id).then(
                             function (response) {
                                 getAllPosts();

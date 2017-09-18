@@ -1,7 +1,7 @@
     <div class="container">
         <div ng-controller="ContentController" style="margin-top: 7%;">
 
-            <input style="width: 20%" type="text" ng-model="searchTerm" ng-change="change(text)"
+            <input style="width: 20%" type="text" ng-model="searchTerm" ng-change="change()"
                    placeholder="Search by Title"
                    class="form-control" id="titlefilter">
 

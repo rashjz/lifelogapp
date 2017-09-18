@@ -26,7 +26,11 @@ public class ContentServiceImpl implements ContentService {
 
     @Override
     public void saveContent(Content content) {
-        contentRepository.persist(content);
+        if (content.getId()!=0 ){
+            contentRepository.update(content);
+        }else{
+            contentRepository.persist(content);
+        }
     }
 
     @Override
@@ -38,7 +42,9 @@ public class ContentServiceImpl implements ContentService {
 
     @Override
     public void deleteContentById(Long id) {
-        contentRepository.delete(null);
+        Content content=new Content();
+        content.setId(id.intValue());
+        contentRepository.delete(content);
     }
 
     @Transactional(readOnly = true)
