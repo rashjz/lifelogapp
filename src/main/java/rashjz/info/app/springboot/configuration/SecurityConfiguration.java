@@ -68,12 +68,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 			authorizeRequests()
 				.antMatchers("/").permitAll()
 				.antMatchers("/login").permitAll()
-				.antMatchers("/content").permitAll()
+				.antMatchers("/apicontent").permitAll()
 				.antMatchers("/admincontent").permitAll()
 				.antMatchers("/apicontent/**").permitAll()
 				.antMatchers("/apiuser/**").permitAll()
 				.antMatchers("/task").permitAll()
 				.antMatchers("/register").permitAll()
+				.antMatchers("/registration").permitAll()
 				.antMatchers("/user").hasAuthority("USER").anyRequest()
 				.authenticated().and().csrf().disable().formLogin()
 				.loginPage("/login").failureUrl("/login?error=true")
@@ -103,7 +104,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 				   "/images/**",
 				   "/webjars/**",
 				   "/tasks/**",
-				   "/contentTypes/**");
+				   "/contentTypes");
 	}
 
 

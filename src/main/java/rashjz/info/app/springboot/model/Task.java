@@ -4,7 +4,7 @@ package rashjz.info.app.springboot.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name="task_list")
+@Table(name="task_list", schema = "lifelog")
 public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

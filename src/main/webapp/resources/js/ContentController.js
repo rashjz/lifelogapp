@@ -22,8 +22,10 @@ angular.module('taskManagerApp').controller('ContentController',
         function getAllPosts() {
             ContentService.getAllPosts($scope.searchTerm, $scope.currentPage - 1, $scope.itemsPerPage).then(
                 function (response) {
-                    $scope.posts = response.content;
-                    $scope.totalItems = response.totalElements;
+                    console.log("-------------- $scope.searchTerm " + $scope.searchTerm + " $scope.currentPage " + $scope.currentPage  + " $scope.itemsPerPage " + $scope.itemsPerPage);
+                    $scope.posts = response.data.posts;
+                    $scope.totalItems = response.data.totalElements;
+                    console.log(JSON.stringify(response) + " zzzzzzzzzzzzzzzzzzzzzzz")
                 }, function (error) {
                     console.log(error + " error  during service call")
                     $scope.posts = [];
@@ -44,7 +46,7 @@ angular.module('taskManagerApp').controller('ContentController',
             ContentService.loadContentTypes().then(
                 function (response) {
                     // $scope.contentTypes = response.data._embedded.contentTypes;
-                    $scope.contentTypes = response;
+                    $scope.contentTypes = response.data;
                     console.log(JSON.stringify($scope.contentTypes) + '***************************');
                 }, function (error) {
                     console.log(error + " error  during service call")

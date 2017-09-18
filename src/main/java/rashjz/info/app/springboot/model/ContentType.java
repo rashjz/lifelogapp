@@ -6,7 +6,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "content_type")
+@Table(name = "content_type", schema = "lifelog")
 public class ContentType {
 
     @Id
@@ -21,6 +21,7 @@ public class ContentType {
 
     @Column(name = "status")
     private String status;
+
 
     public ContentType() {
     }

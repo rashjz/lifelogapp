@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('taskManagerApp').factory('ContentService', function ($http) {
-        var posts = [];
+
 
         var factory = {
             getAllPosts: getAllPosts,
@@ -17,12 +17,10 @@ angular.module('taskManagerApp').factory('ContentService', function ($http) {
 
             return $http.get('/apicontent/contents?searchTerm=' + searchTerm + '&page=' + page + '&size=' + size).then(
                 function (response) {
-                    console.log("--------------" + searchTerm + " " + page + " " + size);
-                    posts = response.data;
-                    return posts;
+                    return response;
                 },
                 function (errResponse) {
-                    console.error('Error while loading posts' + errResponse);
+                    console.error('Error while loading getAllPosts' + errResponse);
                 }
             );
 
@@ -32,11 +30,10 @@ angular.module('taskManagerApp').factory('ContentService', function ($http) {
 
             return $http.get('/contentTypes').then(
                 function (response) {
-                    console.log("--------------" + response);
                     return response;
                 },
                 function (errResponse) {
-                    console.error('Error while loading posts' + errResponse);
+                    console.error('Error while invoking loadContentTypes' + errResponse);
                 }
             );
         }
@@ -49,7 +46,7 @@ angular.module('taskManagerApp').factory('ContentService', function ($http) {
                     return response;
                 },
                 function (errResponse) {
-                    console.error('Error while loading posts' + errResponse);
+                    console.error('Error while loading updateContent' + errResponse);
                 }
             );
         }
@@ -61,7 +58,7 @@ angular.module('taskManagerApp').factory('ContentService', function ($http) {
                     return response;
                 },
                 function (errResponse) {
-                    console.error('Error while loading posts' + errResponse);
+                    console.error('Error while loading deleteContent' + errResponse);
                 }
             );
         }

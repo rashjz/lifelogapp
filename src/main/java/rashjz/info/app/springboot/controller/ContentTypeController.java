@@ -23,6 +23,6 @@ public class ContentTypeController {
     @GetMapping(value = "/contentTypes")
     public @ResponseBody
     List<ContentType> getTestMethod() {
-        return typeRepository.findAll();
+        return typeRepository.getAll(ContentType.class);
     }
 }

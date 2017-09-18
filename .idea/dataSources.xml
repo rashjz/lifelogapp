@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="lifelog" uuid="deb2dbf4-f8b2-4cd1-a41f-0280c0ae2673">
-      <driver-ref>6c730065-6912-4984-bd86-8d570393c8e2</driver-ref>
+    <data-source source="LOCAL" name="mysql@localhost" uuid="8eaf8bf1-2e6a-4370-b338-c58caa4323ee">
+      <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3344/bakuposter</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3344/mysql</jdbc-url>
       <driver-properties>
         <property name="autoReconnect" value="true" />
         <property name="zeroDateTimeBehavior" value="convertToNull" />

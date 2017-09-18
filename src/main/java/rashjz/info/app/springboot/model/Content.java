@@ -9,7 +9,7 @@ import java.util.Date;
 
 
 @Entity
-@Table(name = "content")
+@Table(name = "content", schema = "lifelog")
 public class Content {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -27,7 +27,7 @@ public class Content {
 
 
     @ManyToOne(optional = false, cascade = CascadeType.REFRESH)
-    @JoinColumn(name = "type_id")
+    @JoinColumn(name = "type_id",referencedColumnName = "type_id")
     public ContentType contentType;
 
     @JsonFormat(pattern="yyyy-MM-dd")

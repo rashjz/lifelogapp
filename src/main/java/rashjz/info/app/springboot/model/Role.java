@@ -3,13 +3,13 @@ package rashjz.info.app.springboot.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "role")
+@Table(name = "role", schema = "lifelog")
 public class Role {
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="role_id")
 	private int id;
-	@Column(name="role")
+	@Column(name="app_role")
 	private String role;
 	
 	public int getId() {
@@ -24,6 +24,6 @@ public class Role {
 	public void setRole(String role) {
 		this.role = role;
 	}
-	
-	
+
+
 }

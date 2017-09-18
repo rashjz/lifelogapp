@@ -7,11 +7,14 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.annotation.Transactional;
 import rashjz.info.app.springboot.model.Content;
+import rashjz.info.app.springboot.model.LazyLoad;
 import rashjz.info.app.springboot.repository.ContentRepository;
 import rashjz.info.app.springboot.repository.ContentTypeRepository;
 
+import java.util.List;
+
 @Service("contentService")
-@EnableTransactionManagement
+@Transactional
 public class ContentServiceImpl implements ContentService {
 
     @Autowired
@@ -23,25 +26,25 @@ public class ContentServiceImpl implements ContentService {
 
     @Override
     public void saveContent(Content content) {
-        contentRepository.save(content);
+        contentRepository.persist(content);
     }
 
     @Override
     public Content findById(Long id) {
-        return contentRepository.findOne(id.intValue());
+        return contentRepository.getByKey(id.intValue());
     }
 
 
 
     @Override
     public void deleteContentById(Long id) {
-        contentRepository.delete(id.intValue());
+        contentRepository.delete(null);
     }
 
     @Transactional(readOnly = true)
     @Override
-    public Page<Content> findByTitleLike(String searchTerm, Pageable pageRequest) {
-        Page<Content> searchResultPage = contentRepository.findByTitleLike(searchTerm, pageRequest);
+    public LazyLoad findByTitleLike(String searchTerm, Pageable pageRequest) {
+        LazyLoad searchResultPage = contentRepository.findByTitleLike(searchTerm, pageRequest);
         return searchResultPage;
     }
 

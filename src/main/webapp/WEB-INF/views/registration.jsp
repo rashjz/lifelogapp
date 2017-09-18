@@ -6,25 +6,25 @@
                 <div class="form-group">
                     <div class="col-sm-9">
                         <label class="validation-message"></label>
-                        <input type="text" placeholder="Name" class="form-control"/>
+                        <input type="text" name="name" placeholder="Name" class="form-control"/>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-sm-9">
                         <label class="validation-message"></label>
-                        <input type="text" placeholder="Last Name" class="form-control"/>
+                        <input type="text" name="lastname" placeholder="Last Name" class="form-control"/>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-sm-9">
-                        <input type="text"  placeholder="Email" class="form-control"/>
+                        <input type="text" name="email" placeholder="Email" class="form-control"/>
                         <label class="validation-message"></label>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="col-sm-9">
-                        <input type="password" placeholder="Password" class="form-control"/>
+                        <input type="password" placeholder="Password" name="password" class="form-control"/>
                         <label class="validation-message"></label>
                     </div>
                 </div>

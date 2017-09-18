@@ -3,12 +3,18 @@ package rashjz.info.app.springboot.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.convert.converter.Converter;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 import rashjz.info.app.springboot.model.Content;
+import rashjz.info.app.springboot.model.LazyLoad;
 import rashjz.info.app.springboot.service.ContentService;
+
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * Created by Rashad Javadov on 8/7/2017.
@@ -25,26 +31,26 @@ public class ContentRestController {
 
     @GetMapping(value = "/contents")
     public @ResponseBody
-    Page<Content> listAllContents(@RequestParam("searchTerm") String searchTerm,
-                                  @RequestParam("page") Integer page,
-                                  @RequestParam("size") Integer size) {
-        //http://localhost:8080/api/contents?searchTerm=&page=0&size=10
-        logger.info("searchTerm ::::: " + searchTerm + " page ::::: " + page + " size ::::: " + size);
+    LazyLoad listAllContents(@RequestParam("searchTerm") String searchTerm,
+                             @RequestParam("page") Integer page,
+                             @RequestParam("size") Integer size) {
+        //http://localhost:8080/apicontent/contents?searchTerm=&page=0&size=10
+         logger.info("searchTerm ::::: " + searchTerm + " page ::::: " + page + " size ::::: " + size);
         Pageable pageable = new PageRequest(page, size, null);
         if (String.valueOf(searchTerm).isEmpty()) {
             searchTerm = "%";
         } else {
             searchTerm = searchTerm + "%";
         }
-        Page<Content> contents = contentService.findByTitleLike(searchTerm, pageable);
-        logger.info(searchTerm + " getTotalElements : " + contents.getTotalElements() + " TotalPag : " + contents.getTotalPages() + "-----------------" + contents.getContent().size());
-        return contents;
+        LazyLoad load = contentService.findByTitleLike(searchTerm, pageable);
+        return load;
     }
 
 
     @PostMapping(value = "/contentupdate/")
     public @ResponseBody
     Content addContent(@RequestBody Content content) {
+        System.out.println("uuuuuuuuuuuuuuuuupdate "+content.toString());
         contentService.saveContent(content);
         return content;
     }

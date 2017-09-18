@@ -9,7 +9,7 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(name = "user")
+@Table(name = "user", schema = "lifelog")
 public class User {
 
 	@Id
@@ -93,4 +93,16 @@ public class User {
 		this.roles = roles;
 	}
 
+	@Override
+	public String toString() {
+		return "User{" +
+				"id=" + id +
+				", email='" + email + '\'' +
+				", password='" + password + '\'' +
+				", name='" + name + '\'' +
+				", lastName='" + lastName + '\'' +
+				", active=" + active +
+				", roles=" + roles +
+				'}';
+	}
 }

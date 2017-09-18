@@ -11,7 +11,7 @@
     <properties>
         <springframework.version>4.3.0.RELEASE</springframework.version>
         <hibernate.version>5.2.2.Final</hibernate.version>
-        <mysql.connector.version>5.1.31</mysql.connector.version>
+        <mysql.connector.version>5.1.18</mysql.connector.version>
         <spring.security.version>4.2.0.RELEASE</spring.security.version>
         <angularjs.version>1.6.4</angularjs.version>
         <bootstrap.version>3.3.7</bootstrap.version>
