@@ -12,7 +12,7 @@ import rashjz.info.app.springboot.repository.ContentTypeRepository;
 import java.util.List;
 
 /**
- * Created by rasha_000 on 9/13/2017.
+ * Created by Rashad Javadov
  */
 @RestController
 public class ContentTypeController {

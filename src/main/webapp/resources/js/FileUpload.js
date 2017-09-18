@@ -14,7 +14,7 @@ angular.module('taskManagerApp').service('uploadService', function ($http, $q) {
 
         return $http({
             method: 'POST',
-            url: '/api/upload/', // /api/upload
+            url: '/apiuser/upload/', // /api/upload
             transformRequest: angular.identity,
             headers: {'Content-Type': undefined},
             data: formData

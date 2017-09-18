@@ -17,7 +17,7 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * Created by Rashad Javadov on 8/7/2017.
+ * Created by Rashad Javadov
  */
 @RestController
 @RequestMapping("/apicontent")
@@ -50,7 +50,6 @@ public class ContentRestController {
     @PostMapping(value = "/contentupdate/")
     public @ResponseBody
     Content addContent(@RequestBody Content content) {
-        System.out.println("uuuuuuuuuuuuuuuuupdate "+content.toString());
         contentService.saveContent(content);
         return content;
     }
@@ -61,11 +60,4 @@ public class ContentRestController {
     }
 
 
-    @GetMapping(value = "/test/")
-    public @ResponseBody
-    Pageable getTestMethod() {
-        Pageable pageable = new PageRequest(0, 10, null);
-        // new Sort(Sort.Direction.DESC, "description").and(new Sort(Sort.Direction.ASC, "title"))
-        return pageable;
-    }
 }

@@ -10,6 +10,18 @@ import java.util.Set;
 
 @Entity
 @Table(name = "user", schema = "lifelog")
+@NamedQueries({
+//		@NamedQuery(name = "Users.findAll", query = "SELECT u FROM Users u"),
+//		@NamedQuery(name = "Users.findByUsername", query = "SELECT u FROM Users u WHERE u.username = :username")
+//		@NamedQuery(name = "Users.findByPassword", query = "SELECT u FROM Users u WHERE u.password = :password"),
+//		@NamedQuery(name = "Users.findByEnabled", query = "SELECT u FROM Users u WHERE u.enabled = :enabled"),
+//		@NamedQuery(name = "Users.findByFirstname", query = "SELECT u FROM Users u WHERE u.firstname = :firstname"),
+//		@NamedQuery(name = "Users.findByLastname", query = "SELECT u FROM Users u WHERE u.lastname = :lastname"),
+//		@NamedQuery(name = "Users.findByNote", query = "SELECT u FROM Users u WHERE u.note = :note"),
+//		@NamedQuery(name = "Users.findByUserId", query = "SELECT u FROM Users u WHERE u.userId = :userId"),
+//		@NamedQuery(name = "Users.findByImage", query = "SELECT u FROM Users u WHERE u.image = :image"),
+//		@NamedQuery(name = "Users.findByPhone", query = "SELECT u FROM Users u WHERE u.phone = :phone")
+})
 public class User {
 
 	@Id
@@ -33,7 +45,7 @@ public class User {
 	private String lastName;
 	@Column(name = "active")
 	private int active;
-	@ManyToMany(cascade = CascadeType.ALL)
+	@ManyToMany(cascade = CascadeType.REFRESH)
 	@JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private Set<Role> roles;
 

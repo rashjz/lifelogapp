@@ -54,27 +54,13 @@ public class LoginController {
         user.setPassword(password);
         user.setLastName(lastname);
         Role role = roleRepository.getByKey(Integer.valueOf(1));
-        System.out.println(role.getId()+"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
         Set<Role> roles=new HashSet<>();
         roles.add(role);
         user.setRoles(roles);
 //        User userExists = userService.findUserByEmail(user.getEmail());
 
-        logger.info("useeeeeeeeeeeeeeeerrr " + user.toString());
         userService.saveUser(user);
-        /*
-        if (userExists != null) {
-            bindingResult.rejectValue("email", "error.user",
-                    "There is already a user registered with the email provided");
-        }
-        if (bindingResult.hasErrors()) {
-            modelMap.addAttribute("errorMessage", "Something went wrong please try again");
-        } else {
-            userService.saveUser(user);
-            modelMap.addAttribute("successMessage", "User has been registered successfully");
-            modelMap.addAttribute("user", new User());
-        }
-        */
+
         modelMap.addAttribute("content", "registration.jsp");
         return "index";
     }
