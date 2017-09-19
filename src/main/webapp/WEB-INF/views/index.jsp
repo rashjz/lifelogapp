@@ -6,6 +6,7 @@
     <link rel="icon" type="image/png" href="${pageContext.request.contextPath}/resources/images/fav.png">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link href='${pageContext.request.contextPath}/resources/css/style.css' rel="stylesheet" type="text/css"/>
+    <link href='${pageContext.request.contextPath}/resources/css/spinner.css' rel="stylesheet" type="text/css"/>
 
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/webjars/font-awesome/4.7.0/css/font-awesome.css"/>
 
@@ -42,6 +43,8 @@
 <%--<div th:replace="templates/footer :: footer"></div>--%>
 <jsp:include page="templates/footer.jsp" />
 
-
+<div ng-show="loading" id="mydiv">
+    <img src="${pageContext.request.contextPath}/resources/images/gettestr-large-spinner-orange.gif" class="ajax-loader"/>
+</div>
 </body>
 </html>

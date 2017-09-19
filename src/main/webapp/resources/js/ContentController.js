@@ -1,6 +1,6 @@
 angular.module('taskManagerApp').controller('ContentController',
     ['$scope', 'ContentService', 'uploadService', '$uibModal', function ($scope, ContentService, uploadService, $uibModal) {
-
+        $scope.loading = true;
         $scope.searchTerm = '';
         $scope.totalItems;
         $scope.currentPage = 1;
@@ -8,24 +8,29 @@ angular.module('taskManagerApp').controller('ContentController',
         $scope.content = {};
 
 
-            getAllContentTypes();
+        getAllContentTypes();
 
         $scope.change = function () {
             getAllPosts()
+
         };
 
 
         function getAllPosts() {
+            $scope.loading = true;
             ContentService.getAllPosts($scope.searchTerm, $scope.currentPage - 1, $scope.itemsPerPage).then(
                 function (response) {
-                    console.log("-------------- $scope.searchTerm " + $scope.searchTerm + " $scope.currentPage " + $scope.currentPage  + " $scope.itemsPerPage " + $scope.itemsPerPage);
+                    console.log("-------------- $scope.searchTerm " + $scope.searchTerm + " $scope.currentPage " + $scope.currentPage + " $scope.itemsPerPage " + $scope.itemsPerPage);
                     $scope.posts = response.data.posts;
                     $scope.totalItems = response.data.totalItems;
                     console.log(JSON.stringify(response) + " zzzzzzzzzzzzzzzzzzzzzzz")
+
                 }, function (error) {
                     console.log(error + " error  during service call")
                     $scope.posts = [];
-                });
+                }).finally(function () {
+                $scope.loading = false;
+            });
         }
 
         $scope.editContent = function editContent() {
