@@ -1,4 +1,4 @@
-    <footer class="site-footer navbar-default">
+    <footer style="background: #e7e7e7;" class="site-footer navbar-default">
         <hr/>
         <div class="container">
             <div class="row ">
@@ -33,7 +33,7 @@
                 </div>
             </div>
 
-            <div class="colophon"> © 2017 Bütün hüquqlar qorunur. (<a href="http://rashjz.info" target="_blank">http://rashjz.info</a>)
+            <div class="colophon"> © 2017 Lifelog, Inc. (<a href="http://rashjz.info" target="_blank">http://rashjz.info</a>)
             </div>
         </div>
     </footer>

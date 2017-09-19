@@ -1,24 +1,53 @@
+<style>
+    body {
+        background: url(https://codepen.io/munkgorn/pen/mzyAs/image/large.png);
+        background-color: #444;
+        /*background: url(https://codepen.io/munkgorn/pen/mzyAs/image/large.png), url(http://mymaplist.com/img/parallax/pinlayer1.png), url(http://mymaplist.com/img/parallax/back.png);*/
+    }
 
-    <div class="row">
-        <div style="margin-top: 5%;" class="col-md-6 col-md-offset-3">
-            <form action="/register" method="get">
-                <button class="btn btn-md btn-warning btn-block" type="Submit">Go To Registration Page</button>
-            </form>
-            <form action="/login" method="POST" class="form-signin">
-                <%--<h3 class="form-signin-heading" th:text="Welcome"></h3>--%>
-                <br/>
-                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+    .vertical-offset-100 {
+        padding-top: 100px;
+    }
+</style>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(document).mousemove(function (e) {
+            TweenLite.to($('body'),
+                .5,
+                {
+                    css: {
+                        backgroundPosition: "" + parseInt(event.pageX / 8) + "px " + parseInt(event.pageY / '12') + "px, " + parseInt(event.pageX / '15') + "px " + parseInt(event.pageY / '15') + "px, " + parseInt(event.pageX / '30') + "px " + parseInt(event.pageY / '30') + "px"
+                    }
+                });
+        });
+    });
+</script>
 
-                <input type="text" id="email" name="email" placeholder="Email"
-                       class="form-control"/> <br/>
-                <input type="password" placeholder="Password"
-                       id="password" name="password" class="form-control"/> <br/>
-
-                <%--<div align="center" th:if="${param.error}">--%>
-                    <%--<p style="font-size: 20px; color: #FF1C19;">Email or Password invalid, please verify</p>--%>
-                <%--</div>--%>
-                <button class="btn btn-lg btn-primary btn-block" name="Submit" value="Login" type="Submit">Login</button>
-            </form>
+<div style="margin-top: 5%" class="row vertical-offset-100">
+    <div class="col-md-4 col-md-offset-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Please sign in</h3>
+            </div>
+            <div class="panel-body">
+                <form action="/login" method="POST" accept-charset="UTF-8" role="form">
+                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                    <fieldset>
+                        <div class="form-group">
+                            <input class="form-control" placeholder="E-mail" name="email" type="text">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input name="remember" type="checkbox" value="Remember Me"> Remember Me
+                            </label>
+                        </div>
+                        <input class="btn btn-lg btn-success btn-block" type="submit" value="Login">
+                    </fieldset>
+                </form>
+            </div>
         </div>
     </div>
-
+</div>

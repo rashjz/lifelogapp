@@ -1,11 +1,14 @@
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Lifelog</title>
+    <meta name="description" content="Lifelog by Mahizar Javadova">
+    <meta name="author" content="Rashad Javadov">
     <link rel="icon" type="image/png" href="${pageContext.request.contextPath}/resources/images/fav.png">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link href='${pageContext.request.contextPath}/resources/css/style.css' rel="stylesheet" type="text/css"/>
+    <%--<link href='${pageContext.request.contextPath}/resources/css/style.css' rel="stylesheet" type="text/css"/>--%>
     <link href='${pageContext.request.contextPath}/resources/css/spinner.css' rel="stylesheet" type="text/css"/>
 
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/webjars/font-awesome/4.7.0/css/font-awesome.css"/>

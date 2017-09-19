@@ -1,59 +1,72 @@
-    <div class="container">
-        <div ng-controller="ContentController" style="margin-top: 7%;">
-
-            <input style="width: 20%" type="text" ng-model="searchTerm" ng-change="change()"
-                   placeholder="Search by Title"
-                   class="form-control" id="titlefilter">
 
 
-            <div style="margin-top: 2%;" ng-repeat="post in posts">
 
-
-                <div class="row">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-3 col-md-3">
-                            <a href="#">
-                                <!--<img src="http://wanderluxe.theluxenomad.com/wp-content/uploads/2014/10/http-www.urchinbali.comgallery.jpg"-->
-                                     <!--class="img-responsive img-box img-thumbnail">-->
-                                <img class="img-responsive img-box img-thumbnail"
-                                     ng-src="{{post.imagePath == null ? 'images/emtyimage.png' : post.imagePath}}"/>
-                            </a>
-                        </div>
-                        <div class="col-xs-12 col-sm-9 col-md-9">
-                            <div class="list-group">
-                                <div class="list-group-item">
-                                    <div class="row-content">
-                                        <div class="list-group-item-heading">
-                                            <a href="#" title="">
-                                                <h5>{{post.title}} </h5>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <h6><a href="#">Post type : {{post.contentType.name}} </a> <span>Date : {{ post.insertDate | date:'MM/dd/yyyy' }}</span>
-                            </h6>
-                            <p>Written by {{post.author}}</p>
-                            <p>{{post.description}}</p>
-                        </div>
-                    </div>
-                    <hr>
-                </div>
-
+    <div class="row">
+        <div style="margin-top: 5%" class="panel panel-default panel-table">
+            <div class="panel-heading">
+                About
+            </div>
+            <div class="panel-body">
+                <p style="margin-top: 20px;font-weight:  bold;">
+                    Cinépolis is a Mexican chain of movie theaters. Its name means City of Cinema and its slogan is La
+                    Capital del Cine Cinépolis is the biggest cineplex chain in ...
+                    <br/>
+                    Functionality of android application (012) 496 52 73, (055) 757 87 72, e-mail info@citylife.az
+                    <br/>
+                    Functionality of android application
+                    <br/>
+                    * Watch to trailer and poster
+                    <br/>
+                    * Read description
+                    <br/>
+                    * Find on map
+                    <br/>
+                    * Vote or like selected post
+                    <br/>
+                    * Comment on post
+                    <br/>
+                    * Event save to calendar feature
+                    <br/>
+                    * Support google plus and Facebook authorization for user profile for sing in
+                    <br/>
 
             </div>
-
-            <ul uib-pagination total-items="totalItems"
-                ng-model="currentPage" items-per-page="itemsPerPage"
-                max-size="7" rotate="false" previous-text="&lsaquo;" next-text="&rsaquo;"
-                first-text="&laquo;" last-text="&raquo;"/>
-
-
         </div>
     </div>
 
-    <!--</div>-->
-    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/FileUpload.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/ContentService.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/ContentController.js"></script>
 
+
+    <div class="row">
+
+        <div style="margin-top: 2%;" class="panel panel-default">
+            <div class="panel-heading">Map</div>
+            <div class="panel-body">
+
+                <div style="height: 40%;width: 100%;" id="map">
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+<script>
+    function initMap() {
+        var title = 'Company';
+        var latitude =50.0802487;
+        var longitude =49.9250139;
+        var myLatLng = {lat: latitude, lng: longitude};
+        var mapDiv = document.getElementById('map');
+        var map = new google.maps.Map(mapDiv, {
+            center: myLatLng,
+            zoom: 14
+        });
+        var marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+            title: title
+        });
+    }
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAS3mhlssgqW-VAKDv9chhUooeQsdSGoxo&&callback=initMap"
+        async defer></script>

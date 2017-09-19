@@ -33,4 +33,14 @@ public class NavigationController {
         modelMap.addAttribute("content", "admincontent.jsp");
         return "index";
     }
+    @GetMapping("/about")
+    String getAboutPage(ModelMap modelMap) {
+        modelMap.addAttribute("content", "about.jsp");
+        return "index";
+    }
+    @GetMapping("/contact")
+    String getContactPage(ModelMap modelMap) {
+        modelMap.addAttribute("content", "contact.jsp");
+        return "index";
+    }
 }
