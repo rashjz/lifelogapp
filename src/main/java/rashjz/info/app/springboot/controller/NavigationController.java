@@ -43,4 +43,9 @@ public class NavigationController {
         modelMap.addAttribute("content", "contact.jsp");
         return "index";
     }
+    @GetMapping("/view")
+    String getViewPage(ModelMap modelMap) {
+        modelMap.addAttribute("content", "view.jsp");
+        return "view";
+    }
 }

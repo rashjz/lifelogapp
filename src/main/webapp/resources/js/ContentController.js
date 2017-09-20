@@ -6,7 +6,7 @@ angular.module('taskManagerApp').controller('ContentController',
         $scope.currentPage = 1;
         $scope.itemsPerPage = 3;
         $scope.content = {};
-
+        $scope.showSingleView = false;
 
         getAllContentTypes();
 
@@ -18,6 +18,8 @@ angular.module('taskManagerApp').controller('ContentController',
 
         function getAllPosts() {
             $scope.loading = true;
+            $scope.showSingleView = false;
+
             ContentService.getAllPosts($scope.searchTerm, $scope.currentPage - 1, $scope.itemsPerPage).then(
                 function (response) {
                     console.log("-------------- $scope.searchTerm " + $scope.searchTerm + " $scope.currentPage " + $scope.currentPage + " $scope.itemsPerPage " + $scope.itemsPerPage);
@@ -90,7 +92,7 @@ angular.module('taskManagerApp').controller('ContentController',
         $scope.selectRow = function (content) {
             console.log(JSON.stringify(content) + " ---------------------");
             $scope.content = content;
-
+            $scope.showSingleView = true;
         };
 
 

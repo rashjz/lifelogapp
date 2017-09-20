@@ -5,60 +5,37 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-<div style="margin-top: 5%" class="panel panel-default">
+<div ng-show="showSingleView" style="margin-top: 5%" class="panel panel-default">
     <div class="panel-heading">
         <div style="font-weight: bolder;" class="panel-title pull-left">
-            ${content.title}
+            {{content.title}}
         </div>
-        <div class="panel-title pull-right">${content.insDate}</div>
+        <div class="panel-title pull-right"> Date : {{ content.insertDate | date:'MM/dd/yyyy' }} </div>
         <div class="clearfix"></div>
     </div>
 
     <div class="panel-body">
 
 
-        <div class="row">
-            <div class="col-md-5">
-                <img onerror="this.src='${pageContext.request.contextPath}/resources/images/noimage.jpg'"
-                     src="${content.imgUrl}" border="0" class="img-responsive"
-                     style="border-color: #7C7C7C; margin-right: 4px;max-width: 350px;"/>
-            </div>
-
-            <div style="margin-left: 2%" class="col-md-5">
-                <b style="color: #008bad"><spring:message code="additional"/>
-                    : </b> ${content.description} </br>
-
-                <b style="color: #008bad"><spring:message code="enddate"/> :</b> ${content.endDate}  </br>
-
-                <b style="color: #008bad"><spring:message code="genre"/> :</b> ${content.genre}   </br>
-
-                <b style="color: #008bad"><spring:message code="producer"/>
-                    :</b> ${content.producer}   </br>
-
-                <b style="color: #008bad"><spring:message code="writer"/> :</b> ${content.writer}   </br>
-
-                <b style="color: #008bad"><spring:message code="price"/> :</b> ${content.price} AZN  </br>
-
-                <b style="color: #008bad"><spring:message code="added"/> :</b> ${content.insDate}   </br>
-
-                <!-- public shares -->
-
-                <div style="margin-top: 5%" class="ssk-sm ssk-group"
-                     data-url="bakuposter.com/event?c=${dataCode}"
-                     data-text="${content.description}"
-                     data-title="${content.title}" data-image="${content.imgUrl}">
-                    <a class="ssk ssk-facebook"></a>
-                    <a class="ssk ssk-twitter"></a>
-                    <a class="ssk ssk-google-plus"></a>
+        <div  class="panel panel-default">
+            <div class="row">
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <img class="img-responsive img-box img-thumbnail"
+                         ng-src="{{content.imagePath == null ? 'images/emtyimage.png' : content.imagePath}}"/>
                 </div>
+                <div class="col-xs-12 col-sm-3 col-md-3">
+                    <h5>{{content.title}} </h5>
 
-                <div style="margin-top: 5%" data-send="true"
-                     class="fb-like"
-                     data-share="true"
-                     data-width="350"
-                     data-show-faces="true">
+
+                    <h6>Post type : {{content.contentType.name}} <span>Date : {{ content.insertDate | date:'MM/dd/yyyy' }}</span>
+                    </h6>
+                    <p>Written by {{content.author}}</p>
+                    <p>{{content.description}}</p>
+
                 </div>
             </div>
         </div>
+
+
     </div>
 </div>

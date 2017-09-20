@@ -11,7 +11,8 @@
     <%--<link href='${pageContext.request.contextPath}/resources/css/style.css' rel="stylesheet" type="text/css"/>--%>
     <link href='${pageContext.request.contextPath}/resources/css/spinner.css' rel="stylesheet" type="text/css"/>
 
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/webjars/font-awesome/4.7.0/css/font-awesome.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="${pageContext.request.contextPath}/webjars/font-awesome/4.7.0/css/font-awesome.css"/>
 
 
     <script type="text/javascript" src="/webjars/jquery/3.2.1/jquery.min.js"></script>
@@ -24,30 +25,33 @@
     <script type="text/javascript" src="/webjars/angularjs/1.6.4/angular-resource.min.js"></script>
     <script type="text/javascript" src="/webjars/angularjs/1.6.4/angular-animate.js"></script>
 
-    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/ui-bootstrap-tpls-2.5.0.min.js"></script>
+    <script type="text/javascript"
+            src="${pageContext.request.contextPath}/resources/js/ui-bootstrap-tpls-2.5.0.min.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/lifelog-app.js"></script>
 
 
-
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 </head>
 <body ng-app="taskManagerApp">
 
 <%--<div th:replace="templates/menu :: menu"></div>--%>
-<jsp:include page="templates/menu.jsp" />
+<jsp:include page="templates/menu.jsp"/>
 
 <div class="container">
 
 
-    <jsp:include page="${content}" />
+    <jsp:include page="${content}"/>
 
 </div>
 <%--<div th:replace="templates/footer :: footer"></div>--%>
-<jsp:include page="templates/footer.jsp" />
+<jsp:include page="templates/footer.jsp"/>
 
 <div ng-show="loading" id="mydiv">
-    <img src="${pageContext.request.contextPath}/resources/images/gettestr-large-spinner-orange.gif" class="ajax-loader"/>
+    <img src="${pageContext.request.contextPath}/resources/images/gettestr-large-spinner-orange.gif"
+         class="ajax-loader"/>
 </div>
 </body>
 </html>
