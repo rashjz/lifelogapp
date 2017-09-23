@@ -13,15 +13,15 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li id="menulink1"><a class="nav-link" href="/">Posts<span class="sr-only">(current)</span></a>
+                <li id="menulink1"><a class="nav-link" href="content">Posts<span class="sr-only">(current)</span></a>
                 </li>
-                <li id="menulink3"><a class="nav-link" href="/photos">Photos</a></li>
-                <li id="menulink4"><a class="nav-link" href="/about">About</a></li>
-                <li id="menulink5"><a href="/contact">contact</a></li>
+                <li id="menulink3"><a class="nav-link" href="photos">Photos</a></li>
+                <li id="menulink4"><a class="nav-link" href="about">About</a></li>
+                <li id="menulink5"><a href="contact">contact</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li id="menulink6"><a href="/login">Sign In</a></li>
-                <li id="menulink7"><a href="/register">Register</a></li>
+                <li id="menulink6"><a href="login">Sign In</a></li>
+                <li id="menulink7"><a href="register">Register</a></li>
             </ul>
 
             <form action="projects" method="GET" class="navbar-form navbar-right">

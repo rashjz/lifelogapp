@@ -5,23 +5,33 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10&appId=888848437872798";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
 <div ng-show="showSingleView" style="margin-top: 5%" class="panel panel-default">
     <div class="panel-heading">
         <div style="font-weight: bolder;" class="panel-title pull-left">
             {{content.title}}
         </div>
-        <div class="panel-title pull-right"> Date : {{ content.insertDate | date:'MM/dd/yyyy' }} </div>
+        <div class="panel-title pull-right"> Date : {{ content.insertDate | date:'MM/dd/yyyy' }}</div>
         <div class="clearfix"></div>
     </div>
 
     <div class="panel-body">
 
 
-        <div  class="panel panel-default">
+        <div class="panel panel-default">
             <div class="row">
                 <div class="col-xs-12 col-sm-3 col-md-3">
                     <img class="img-responsive img-box img-thumbnail"
-                         ng-src="{{content.imagePath == null ? 'images/emtyimage.png' : content.imagePath}}"/>
+                         ng-src="{{content.imagePath == null ? '${pageContext.request.contextPath}/resources/images/emtyimage.png' : content.imagePath}}"/>
                 </div>
                 <div class="col-xs-12 col-sm-3 col-md-3">
                     <h5>{{content.title}} </h5>
@@ -35,6 +45,75 @@
                 </div>
             </div>
         </div>
+
+
+        <table>
+            <tbody>
+            <tr>
+                <td>
+                    <a href="#" class="btn btn-block btn-social btn-twitter"
+                       socialshare
+                       socialshare-provider="twitter"
+                       socialshare-text="{{content.title}}"
+                       socialshare-hashtags="angularjs, angular-socialshare"
+                       socialshare-url="http://720kb.net">
+                        <span class="fa fa-twitter"></span> Twitter
+                    </a>
+                </td>
+                <td>
+                    <a href="#" class="btn btn-block btn-social btn-facebook"
+                       socialshare
+                       socialshare-provider="facebook"
+                       socialshare-text="{{content.title}}"
+                       socialshare-hashtags="angularjs, angular-socialshare"
+                       socialshare-url="http://720kb.net">
+                        <span class="fa fa-facebook"></span> Facebook
+                    </a>
+                </td>
+                <td>
+                    <a href="#" class="btn btn-block btn-social btn-linkedin"
+                       socialshare
+                       socialshare-provider="linkedin"
+                       socialshare-text="{{content.title}}"
+                       socialshare-description="angularjs, angular-socialshare"
+                       socialshare-url="http://720kb.net"
+                       socialshare-source="">
+                        <span class="fa fa-linkedin"></span> Linkedin
+                    </a>
+                </td>
+                <td>
+                    <a href="#" class="btn btn-block btn-social btn-vk"
+                       socialshare
+                       socialshare-provider="vk"
+                       socialshare-text="{{content.title}}"
+                       socialshare-description="angularjs, angular-socialshare"
+                       socialshare-url="http://720kb.net"
+                       socialshare-media="#">
+                        <span class="fa fa-vk"></span> VK
+                    </a>
+                </td>
+                <td>
+                    <a href="#" class="btn btn-block btn-social btn-google"
+                       socialshare
+                       socialshare-provider="google"
+                       socialshare-url="http://720kb.net">
+                        <span class="fa fa-google"></span> Google
+                    </a>
+                </td>
+                <td>
+                    <a href="#" class="btn btn-block btn-social btn-evernote"
+                       socialshare
+                       socialshare-provider="evernote"
+                       socialshare-url="http://720kb.net"
+                       socialshare-text="{{content.title}}">
+                        <span class="fa fa-envelope-o"></span> Evernote
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-numposts="5"></div>
 
 
     </div>

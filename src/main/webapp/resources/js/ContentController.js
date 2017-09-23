@@ -10,6 +10,8 @@ angular.module('taskManagerApp').controller('ContentController',
 
         getAllContentTypes();
 
+
+
         $scope.change = function () {
             getAllPosts()
 

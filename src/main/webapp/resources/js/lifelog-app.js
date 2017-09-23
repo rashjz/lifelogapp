@@ -1,5 +1,5 @@
-var app = angular.module('taskManagerApp', ['ngResource','ui.bootstrap','ngRoute']).config(function ($routeProvider, $locationProvider, $httpProvider) {
-    $routeProvider
+var app = angular.module('taskManagerApp', ['ngResource', 'ui.bootstrap', 'ngRoute', '720kb.socialshare']).config(function ($routeProvider, $locationProvider, $httpProvider) {
+    $routeProvider //'djds4rce.angular-socialshare',
         .when("/",
             {
                 // templateUrl: "../views/content.jsp",
@@ -19,10 +19,10 @@ var app = angular.module('taskManagerApp', ['ngResource','ui.bootstrap','ngRoute
         .otherwise({
             templateUrl: "/"
         });
+
     $locationProvider.hashPrefix('');
 
 });
-
 
 
 app.constant('urls', {
@@ -30,3 +30,4 @@ app.constant('urls', {
     USER_SERVICE_API: 'http://localhost:8080/users/',
     TASK_SERVICE_API: 'http://localhost:8080/tasks/'
 });
+

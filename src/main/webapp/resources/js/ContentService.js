@@ -15,7 +15,7 @@ angular.module('taskManagerApp').factory('ContentService', function ($http) {
 
         function getAllPosts(searchTerm, page, size) {
 
-            return $http.get('/apicontent/contents?searchTerm=' + searchTerm + '&page=' + page + '&size=' + size).then(
+            return $http.get('apicontent/contents?searchTerm=' + searchTerm + '&page=' + page + '&size=' + size).then(
                 function (response) {
                     return response;
                 },
@@ -28,7 +28,7 @@ angular.module('taskManagerApp').factory('ContentService', function ($http) {
 
         function loadContentTypes() {
 
-            return $http.get('/contentTypes').then(
+            return $http.get('contentTypes').then(
                 function (response) {
                     return response;
                 },
@@ -40,7 +40,7 @@ angular.module('taskManagerApp').factory('ContentService', function ($http) {
 
         function updateContent(content) {
 
-            return $http.post('/apicontent/contentupdate/', content).then(
+            return $http.post('apicontent/contentupdate/', content).then(
                 function (response) {
                     console.log("--------------" + response);
                     return response;
@@ -52,7 +52,7 @@ angular.module('taskManagerApp').factory('ContentService', function ($http) {
         }
 
         function deleteContent(id) {
-            return $http.delete('/apicontent/contentdelete/'+ id).then(
+            return $http.delete('apicontent/contentdelete/'+ id).then(
                 function (response) {
                     console.log('response delete content :::: '+response);
                     return response;
