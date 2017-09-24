@@ -35,7 +35,7 @@ public class ContentRestController {
                              @RequestParam("page") Integer page,
                              @RequestParam("size") Integer size) {
         //http://localhost:8080/apicontent/contents?searchTerm=&page=0&size=10
-         logger.info("searchTerm ::::: " + searchTerm + " page ::::: " + page + " size ::::: " + size);
+        logger.info("searchTerm ::::: " + searchTerm + " page ::::: " + page + " size ::::: " + size);
         Pageable pageable = new PageRequest(page, size, null);
         if (String.valueOf(searchTerm).isEmpty()) {
             searchTerm = "%";
@@ -55,9 +55,15 @@ public class ContentRestController {
     }
 
     @DeleteMapping(value = "/contentdelete/{id}")
-    public void deleteContent(@PathVariable(value = "id") long  id) {
+    public void deleteContent(@PathVariable(value = "id") long id) {
         contentService.deleteContentById(Long.valueOf(id));
     }
 
-
+    @GetMapping(value = "/content/{id}")
+    public @ResponseBody
+    Content getContentById(@PathVariable Long id) {
+        logger.info("id ::::: " + id);
+        Content content = contentService.findById(id);
+        return content;
+    }
 }

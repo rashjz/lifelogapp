@@ -1,5 +1,5 @@
 angular.module('taskManagerApp').controller('ContentController',
-    ['$scope', 'ContentService', 'uploadService', '$uibModal', function ($scope, ContentService, uploadService, $uibModal) {
+    ['$scope', 'ContentService', 'uploadService', '$uibModal', '$location', function ($scope, ContentService, uploadService, $uibModal, $location) {
         $scope.loading = true;
         $scope.searchTerm = '';
         $scope.totalItems;
@@ -11,6 +11,18 @@ angular.module('taskManagerApp').controller('ContentController',
         getAllContentTypes();
 
 
+        console.log($location.search().cKey);
+        if ($location.search() != '{}' && $location.search().cKey != undefined) {
+            ContentService.getContentByID($location.search().cKey ).then(
+                function (response) {
+                    $scope.showSingleView = true;
+                    $scope.content=response.data;
+                    console.log('responseeeeeeeeeee ' + JSON.stringify(response));
+                }, function (error) {
+                    console.log(error + " error  during service call")
+                    $scope.posts = [];
+                });
+        }
 
         $scope.change = function () {
             getAllPosts()

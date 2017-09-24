@@ -126,7 +126,7 @@ public class UserRestController {
             byte[] bytes = file.getBytes();
             fileName = UUID.randomUUID().toString() + "." + getExt(file.getOriginalFilename());
 
-            Path path = Paths.get(StaticParams.UPLOAD_LOCATION + fileName);
+            Path path = Paths.get(StaticParams.getUploadLocation() + fileName);
             Files.write(path, bytes);
         } catch (Exception e) {
             e.printStackTrace();

@@ -7,7 +7,8 @@ angular.module('taskManagerApp').factory('ContentService', function ($http) {
             getAllPosts: getAllPosts,
             loadContentTypes: loadContentTypes,
             updateContent: updateContent,
-            deleteContent: deleteContent
+            deleteContent: deleteContent,
+            getContentByID:  getContentByID
         };
 
         return factory;
@@ -62,6 +63,16 @@ angular.module('taskManagerApp').factory('ContentService', function ($http) {
                 }
             );
         }
-
+    function getContentByID(id) {
+        return $http.get('apicontent/content/'+ id).then(
+            function (response) {
+                console.log('response get content :::: '+response);
+                return response;
+            },
+            function (errResponse) {
+                console.error('Error while loading deleteContent' + errResponse);
+            }
+        );
+    }
     }
 );

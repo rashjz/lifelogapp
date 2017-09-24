@@ -23,7 +23,7 @@ public class NavigationController {
         return "index";
     }
     
-    @GetMapping({"/","/content"})
+    @GetMapping({"/","/content","/view"})
     String getContentPage(ModelMap modelMap) {
         modelMap.addAttribute("content", "content.jsp");
         return "index";
@@ -36,16 +36,18 @@ public class NavigationController {
     @GetMapping("/about")
     String getAboutPage(ModelMap modelMap) {
         modelMap.addAttribute("content", "about.jsp");
+        modelMap.addAttribute("navbarlocation", "-bottom");
         return "index";
     }
     @GetMapping("/contact")
     String getContactPage(ModelMap modelMap) {
         modelMap.addAttribute("content", "contact.jsp");
+        modelMap.addAttribute("navbarlocation", "-bottom");
         return "index";
     }
-    @GetMapping("/view")
-    String getViewPage(ModelMap modelMap) {
-        modelMap.addAttribute("content", "view.jsp");
-        return "view";
-    }
+//    @GetMapping("/view")
+//    String getViewPage(ModelMap modelMap) {
+//        modelMap.addAttribute("content", "view.jsp");
+//        return "index";
+//    }
 }

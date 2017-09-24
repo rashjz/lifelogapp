@@ -27,7 +27,7 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter  {
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
 		registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
-		registry.addResourceHandler("/uploads/**").addResourceLocations("file:" + StaticParams.UPLOAD_LOCATION);
+		registry.addResourceHandler("/uploads/**").addResourceLocations("file:" + StaticParams.getUploadLocation());
 	}
 
 	@Bean(name = "multipartResolver")

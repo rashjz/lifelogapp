@@ -1,4 +1,4 @@
-<div style="margin-top: 5%" class="footer navbar-fixed-bottom">
+<div style="margin-top: 5%" class="footer navbar-fixed${navbarlocation}">
 
     <footer style="background: #e7e7e7;" class="site-footer navbar-default">
         <hr/>
