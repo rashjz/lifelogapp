@@ -1,104 +1,78 @@
-<style>
-    .jumbotron {
-        background: #358CCE;
-        color: #FFF;
-        border-radius: 0px;
-    }
-
-    .jumbotron-sm {
-        padding-top: 24px;
-        padding-bottom: 24px;
-    }
-
-    .jumbotron small {
-        color: #FFF;
-    }
-
-    .h1 small {
-        font-size: 24px;
-    }
-</style>
-
-
-<div style="margin-top: 7%" class="jumbotron jumbotron-sm">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12 col-lg-12">
-                <h1 class="h1">
-                    Contact us
-                    <small>Feel free to contact us</small>
-                </h1>
-            </div>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <div style="font-weight: bolder;" class="panel-title pull-left">
+            Contact Us
         </div>
+        <div class="panel-title pull-right"></div>
+        <div class="clearfix"></div>
     </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col-md-8">
-            <div class="well well-sm">
-                <form>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="name">
-                                    Name</label>
-                                <input type="text" class="form-control" id="name" placeholder="Enter name"
-                                       required="required"/>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">
-                                    Email Address</label>
-                                <div class="input-group">
-                                <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
-                                </span>
-                                    <input type="email" class="form-control" id="email" placeholder="Enter email"
-                                           required="required"/></div>
-                            </div>
-                            <div class="form-group">
-                                <label for="subject">
-                                    Subject</label>
-                                <select id="subject" name="subject" class="form-control" required="required">
-                                    <option value="na" selected="">Choose One:</option>
-                                    <option value="service">General Customer Service</option>
-                                    <option value="suggestions">Suggestions</option>
-                                    <option value="product">Product Support</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="name">
-                                    Message</label>
-                                <textarea name="message" id="message" class="form-control" rows="9" cols="25"
-                                          required="required"
-                                          placeholder="Message"></textarea>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <button type="submit" class="btn btn-primary pull-right" id="btnContactUs">
-                                Send Message
-                            </button>
-                        </div>
+
+    <div class="panel-body">
+
+
+        <div class="section group">
+            <div class="col">
+                <div class="contact_info">
+                    <h3>Find Us Here</h3>
+                    <div class="map">
+                        <iframe width="100%" height="175" frameborder="0" scrolling="no" marginheight="0"
+                                marginwidth="0"
+                                src="https://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265&amp;output=embed"></iframe>
+                        <br>
+                        <small><a
+                                href="https://maps.google.co.in/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265"
+                                style="color:#666;text-align:left;font-size:12px">View Larger Map</a></small>
                     </div>
-                </form>
+                </div>
+                <div class="company_address">
+                    <h3>Company Information :</h3>
+                    <p>500 Lorem Ipsum Dolor Sit,</p>
+                    <p>22-56-2-9 Sit Amet, Lorem,</p>
+                    <p>USA</p>
+                    <p>Phone:(00) 222 666 444</p>
+                    <p>Fax: (000) 000 00 00 0</p>
+                    <p>Email: <span>info@mycompany.com</span></p>
+                    <p>Follow on: <span>Facebook</span>, <span>Twitter</span></p>
+                </div>
             </div>
+
+            <div class="col">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <h3>Contact Us</h3>
+                        <form method="post" action="contact">
+                            <div class="form-group">
+                                <label for="userName" class="col-lg-2 control-label">NAME</label>
+                                <div class="col-lg-10"><input id="userName" name="userName" type="text"
+                                                              class="form-control"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="userEmail" class="col-lg-2 control-label">E-MAIL</label>
+                                <div class="col-lg-10"><input id="userEmail" name="userEmail" type="text"
+                                                              class="form-control"></div>
+                            </div>
+                            <div class="form-group">
+                                <label name="userPhone" class="col-lg-2 control-label">MOBILE</label>
+                                <div class="col-lg-10"><input id="userPhone" name="userPhone" type="text"
+                                                              class="form-control"></div>
+                            </div>
+                            <div class="form-group">
+                                <label name="userMsg" class="col-lg-2 control-label">SUBJECT</label>
+                                <div class="col-lg-10"><textarea id="userMsg" name="userMsg"
+                                                                 class="form-control"> </textarea></div>
+                            </div>
+                            <div>
+                                <span><input type="submit" class="btn btn-primary" value="Submit"></span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="clear"></div>
         </div>
-        <div class="col-md-4">
-            <form>
-                <legend><span class="glyphicon glyphicon-globe"></span> Our office</legend>
-                <address>
-                    <strong>Twitter, Inc.</strong><br>
-                    795 Folsom Ave, Suite 600<br>
-                    San Francisco, CA 94107<br>
-                    <abbr title="Phone">
-                        P:</abbr>
-                    (123) 456-7890
-                </address>
-                <address>
-                    <strong>Full Name</strong><br>
-                    <a href="mailto:#">first.last@example.com</a>
-                </address>
-            </form>
-        </div>
+
+
     </div>
 </div>

@@ -1,35 +1,46 @@
-<%@page contentType="text/html" pageEncoding="UTF-8" %>
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+<%@ page contentType="text/html;  charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<html>
 <head>
+
     <title>Lifelog</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="description" content="Lifelog by Mahizar Javadova">
     <meta name="author" content="Rashad Javadov">
     <link rel="icon" type="image/png" href="${pageContext.request.contextPath}/resources/images/fav.png">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <%--<link href='${pageContext.request.contextPath}/resources/css/style.css' rel="stylesheet" type="text/css"/>--%>
-    <%--<link href='${pageContext.request.contextPath}/resources/css/social.css' rel="stylesheet" type="text/css"/>--%>
-    <link href='${pageContext.request.contextPath}/resources/css/spinner.css' rel="stylesheet" type="text/css"/>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
 
+    <%--<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>--%>
+    <base href="/"/>
     <link rel="stylesheet" type="text/css"
           href="${pageContext.request.contextPath}/webjars/font-awesome/4.7.0/css/font-awesome.css"/>
 
 
-    <script type="text/javascript" src="webjars/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/webjars/jquery/3.2.1/jquery.min.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css"/>
-    <script type="text/javascript" src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/full-slider.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="${pageContext.request.contextPath}/webjars/bootstrap/3.3.7/css/bootstrap.css"/>
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cerulean/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-zF4BRsG/fLiTGfR9QL82DrilZxrwgY/+du4p/c7J72zZj+FLYq4zY00RylP9ZjiT" crossorigin="anonymous"/>
 
-    <script type="text/javascript" src="webjars/angularjs/1.6.4/angular.min.js"></script>
-    <script type="text/javascript" src="webjars/angularjs/1.6.4/angular-route.min.js"></script>
-    <script type="text/javascript" src="webjars/angularjs/1.6.4/angular-resource.min.js"></script>
-    <script type="text/javascript" src="webjars/angularjs/1.6.4/angular-animate.js"></script>
+    <script type="text/javascript"
+            src="${pageContext.request.contextPath}/webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript"
+            src="${pageContext.request.contextPath}/webjars/angularjs/1.6.4/angular.min.js"></script>
+    <script type="text/javascript"
+            src="${pageContext.request.contextPath}/webjars/angularjs/1.6.4/angular-route.min.js"></script>
+    <script type="text/javascript"
+            src="${pageContext.request.contextPath}/webjars/angularjs/1.6.4/angular-resource.min.js"></script>
+    <script type="text/javascript"
+            src="${pageContext.request.contextPath}/webjars/angularjs/1.6.4/angular-animate.js"></script>
 
     <script type="text/javascript"
             src="${pageContext.request.contextPath}/resources/js/ui-bootstrap-tpls-2.5.0.min.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/angular-socialshare.js"></script>
+    <script type="text/javascript"
+            src="${pageContext.request.contextPath}/resources/js/angular-socialshare.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/lifelog-app.js"></script>
 
 
@@ -41,23 +52,36 @@
 </head>
 <body ng-app="taskManagerApp">
 
-<%--<div th:replace="templates/menu :: menu"></div>--%>
+<!-- Page Content -->
+
 <jsp:include page="templates/menu.jsp"/>
 
 <div class="container">
+    <div style="margin-top: 7%" class="row">
+
+        <!-- Blog Entries Column -->
+        <div class="col-md-8">
+            <%--<spring:message code="test"/>--%>
+            <jsp:include page="${content}"/>
+
+        </div>
+        <c:choose>
+            <c:when test="${sidebar != null }">
+                <br/>
+            </c:when>
+            <c:otherwise>
+                <jsp:include page="templates/sidebar.jsp"/>
+            </c:otherwise>
+        </c:choose>
 
 
-    <jsp:include page="${content}"/>
+    </div>
+    <!-- /.row -->
+
+
+    <jsp:include page="templates/footer.jsp"/>
 
 </div>
-<%--<div th:replace="templates/footer :: footer"></div>--%>
-<jsp:include page="templates/footer.jsp"/>
-
-<div ng-show="loading" id="mydiv">
-    <img src="${pageContext.request.contextPath}/resources/images/gettestr-large-spinner-orange.gif"
-         class="ajax-loader"/>
-</div>
-
 
 </body>
 </html>

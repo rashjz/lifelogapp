@@ -17,12 +17,6 @@ public class NavigationController {
         return "index";
     }
 
-    @GetMapping("/user")
-    String getUser(ModelMap modelMap) {
-        modelMap.addAttribute("content", "user.jsp");//attributevalue is th:fragment="user"
-        return "index";
-    }
-    
     @GetMapping({"/","/content","/view"})
     String getContentPage(ModelMap modelMap) {
         modelMap.addAttribute("content", "content.jsp");
@@ -31,23 +25,20 @@ public class NavigationController {
     @GetMapping("/admincontent")
     String getAdminContentPage(ModelMap modelMap) {
         modelMap.addAttribute("content", "admincontent.jsp");
+        modelMap.addAttribute("sidebar", "hide");
         return "index";
     }
     @GetMapping("/about")
     String getAboutPage(ModelMap modelMap) {
         modelMap.addAttribute("content", "about.jsp");
-        modelMap.addAttribute("navbarlocation", "-bottom");
+//        modelMap.addAttribute("navbarlocation", "-bottom");
         return "index";
     }
     @GetMapping("/contact")
     String getContactPage(ModelMap modelMap) {
         modelMap.addAttribute("content", "contact.jsp");
-        modelMap.addAttribute("navbarlocation", "-bottom");
+//        modelMap.addAttribute("navbarlocation", "-bottom");
         return "index";
     }
-//    @GetMapping("/view")
-//    String getViewPage(ModelMap modelMap) {
-//        modelMap.addAttribute("content", "view.jsp");
-//        return "index";
-//    }
+
 }

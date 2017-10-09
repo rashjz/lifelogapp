@@ -1,10 +1,3 @@
-<style>
-    body {
-        background: url(https://codepen.io/munkgorn/pen/mzyAs/image/large.png);
-        background-color: #444;
-    }
-</style>
-
 
 <div style="margin-top: 7%" class="row vertical-offset-100">
     <div class="col-md-4 col-md-offset-4">

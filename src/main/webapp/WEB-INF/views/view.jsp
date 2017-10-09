@@ -27,7 +27,7 @@
     <div class="panel-body">
 
 
-        <div class="panel panel-default">
+        <div class="panel panel-primary">
             <div class="row">
                 <div class="col-xs-12 col-sm-3 col-md-3">
                     <img class="img-responsive img-box img-thumbnail"
@@ -113,8 +113,11 @@
             </tbody>
         </table>
 
-        <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-numposts="5"></div>
+        <div class="fb-comments" data-href="http://78.46.139.155/view?cKey={{content.id}}" data-numposts="5"></div>
 
 
     </div>
 </div>
+
+
+

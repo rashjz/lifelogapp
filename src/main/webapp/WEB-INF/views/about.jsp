@@ -1,72 +1,97 @@
-
-
-
-    <div class="row">
-        <div style="margin-top: 5%" class="panel panel-default panel-table">
-            <div class="panel-heading">
-                About
-            </div>
-            <div class="panel-body">
-                <p style="margin-top: 20px;font-weight:  bold;">
-                    Cinépolis is a Mexican chain of movie theaters. Its name means City of Cinema and its slogan is La
-                    Capital del Cine Cinépolis is the biggest cineplex chain in ...
-                    <br/>
-                    Functionality of android application (012) 496 52 73, (055) 757 87 72, e-mail info@citylife.az
-                    <br/>
-                    Functionality of android application
-                    <br/>
-                    * Watch to trailer and poster
-                    <br/>
-                    * Read description
-                    <br/>
-                    * Find on map
-                    <br/>
-                    * Vote or like selected post
-                    <br/>
-                    * Comment on post
-                    <br/>
-                    * Event save to calendar feature
-                    <br/>
-                    * Support google plus and Facebook authorization for user profile for sing in
-                    <br/>
-
-            </div>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <div style="font-weight: bolder;" class="panel-title pull-left">
+            About Us
         </div>
+        <div class="panel-title pull-right"></div>
+        <div class="clearfix"></div>
     </div>
 
+    <div class="panel-body">
 
-
-    <div class="row">
-
-        <div style="margin-top: 2%;" class="panel panel-default">
-            <div class="panel-heading">Map</div>
-            <div class="panel-body">
-
-                <div style="height: 40%;width: 100%;" id="map">
+        <div class="about">
+            <h3 class="head">A Few Words About Me</h3>
+            <p class="about-thick">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+                euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
+                nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem
+                vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu
+                feugiat nulla facilisis at vero eros</p>
+            <div class="image group">
+                <div class="about-top">
+                    <div class="grid images_3_of_1">
+                        <img src="${pageContext.request.contextPath}/resources/images/pic20.jpg" alt=""/>
+                    </div>
+                    <div class="grid span_2_of_a">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                            voluptate velit esse cillum dolore eu fugiat nulla pariatur.Lorem ipsum dolor sit amet,
+                            consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore
+                            magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+                            ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum
+                            iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu
+                            feugiat nulla facilisis at vero eros Lorem ipsum dolor sit amet, consectetuer adipiscing
+                            elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                            Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl
+                            ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                    <div class="clear"></div>
                 </div>
-
+                <p class="about-para">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+                    euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis
+                    nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.aliquam
+                    erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
+                    lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in
+                    vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et
+                    accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te
+                    feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet
+                    doming id quod mazim.</p>
+            </div>
+            <div class="section group">
+                <div class="leftsidebar span_3_of_1">
+                    <h4>My Skills</h4>
+                    <div class="about-nav">
+                        <ul>
+                            <li><a href="">Always free from repetition</a></li>
+                            <li><a href="">Always free from repetition</a></li>
+                            <li><a href="">The standard chunk of Lorem Ipsum</a></li>
+                            <li><a href="">The standard chunk of Lorem Ipsum</a></li>
+                            <li><a href="">The standard chunk of Lorem Ipsum</a></li>
+                            <li><a href="">Always free from repetition</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="about-right">
+                    <h4>A few of My Clients</h4>
+                    <div class="quotation">
+                        <div class="quote">
+                            <img src="${pageContext.request.contextPath}/resources/images/quotes.png" alt=""/>
+                        </div>
+                        <div class="quote-desc">
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                                tincidunt ut laoreet dolore magna aliquam erat volutpat</p>
+                        </div>
+                        <div class="mail-info">
+                            <span class="title">Lorem Ipsum, </span><a href="#">info@nicholfoto.org</a>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="quotation">
+                        <div class="quote">
+                            <img src="images/quotes.png" alt=""/>
+                        </div>
+                        <div class="quote-desc">
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                                tincidunt ut laoreet dolore magna aliquam erat volutpat</p>
+                        </div>
+                        <div class="mail-info">
+                            <span class="title">Lorem Ipsum, </span><a href="#">info@nicholfoto.org</a>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="clear"></div>
             </div>
         </div>
     </div>
-
-<script>
-    function initMap() {
-        var title = 'Company';
-        var latitude =50.0802487;
-        var longitude =49.9250139;
-        var myLatLng = {lat: latitude, lng: longitude};
-        var mapDiv = document.getElementById('map');
-        var map = new google.maps.Map(mapDiv, {
-            center: myLatLng,
-            zoom: 14
-        });
-        var marker = new google.maps.Marker({
-            position: myLatLng,
-            map: map,
-            title: title
-        });
-    }
-</script>
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAS3mhlssgqW-VAKDv9chhUooeQsdSGoxo&&callback=initMap"
-        async defer></script>
+</div>

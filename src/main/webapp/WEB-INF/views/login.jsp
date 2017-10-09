@@ -1,14 +1,4 @@
-<style>
-    body {
-        background: url(https://codepen.io/munkgorn/pen/mzyAs/image/large.png);
-        background-color: #444;
-        /*background: url(https://codepen.io/munkgorn/pen/mzyAs/image/large.png), url(http://mymaplist.com/img/parallax/pinlayer1.png), url(http://mymaplist.com/img/parallax/back.png);*/
-    }
 
-    .vertical-offset-100 {
-        padding-top: 100px;
-    }
-</style>
 <script type="text/javascript">
     $(document).ready(function () {
         $(document).mousemove(function (e) {
@@ -30,7 +20,7 @@
                 <h3 class="panel-title">Please sign in</h3>
             </div>
             <div class="panel-body">
-                <form action="/login" method="POST" accept-charset="UTF-8" role="form">
+                <form action="login" method="POST" accept-charset="UTF-8" >
                     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                     <fieldset>
                         <div class="form-group">
