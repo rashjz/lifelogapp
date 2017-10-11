@@ -13,7 +13,7 @@
 
         <div class="panel-body">
 
-                <div style="margin-top: 2%;" ng-repeat="post in posts">
+                <div  ng-repeat="post in posts">
                     <%--<div class="row">--%>
                         <%--<div class="row">--%>
                             <div class="col-xs-12 col-sm-3 col-md-3">
@@ -21,7 +21,7 @@
                                     <!--<img src="http://wanderluxe.theluxenomad.com/wp-content/uploads/2014/10/http-www.urchinbali.comgallery.jpg"-->
                                     <!--class="img-responsive img-box img-thumbnail">-->
                                     <img class="img-responsive img-box img-thumbnail" ng-click="selectRow(post)"
-                                         style="max-width: 200px;"
+                                         style="max-width: 150px;min-width: 150px;min-height: 175px;max-height: 175px;"
                                          ng-src="{{post.imagePath == null ? '${pageContext.request.contextPath}/resources/images/emtyimage.png' : post.imagePath}}"/>
                                 </a>
                             </div>
@@ -31,12 +31,10 @@
                                         <div class="row-content">
                                             <div class="list-group-item-heading">
                                                 <a href="#" title="">
-                                                    <h5>{{post.title}} </h5>
+                                                    <h4 style="color: #88c149;font-weight: bold;">{{post.title}} </h4>
                                                 </a>
-
-
-                                                <h6><a href="#">Post type : {{post.contentType.name}} </a> <span>Date : {{ post.insertDate | date:'MM/dd/yyyy' }}</span>
-                                                </h6>
+                                                <span>Date : {{ post.insertDate | date:'MM/dd/yyyy' }}</span>
+                                                <p><a href="#">Post type : {{post.contentType.name}} </a> </p>
                                                 <p>Written by {{post.author}}</p>
                                                 <p>{{post.description}}</p>
                                             </div>

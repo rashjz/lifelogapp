@@ -40,7 +40,7 @@
 
 
 <!-- Full Page Image Background Carousel Header -->
-<header id="myCarousel" class="carousel slide">
+<header id="myCarousel" style="height :450px !important;" data-ride="carousel" class="carousel slide">
     <!-- Indicators -->
     <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -52,23 +52,23 @@
     <div class="carousel-inner">
         <div class="item active">
             <!-- Set the first background image using inline CSS below. -->
-            <div class="fill" style="background-image:url('https://wallpapercave.com/wp/wc1716335.jpg&text=Slide One');"></div>
+            <div class="fill" style="background-image:url('http://s1.1zoom.me/big0/239/Krakow_Poland_Evening_Houses_Water_Town_square_514419_1280x866.jpg');"></div>
             <div class="carousel-caption">
-                <h2>Caption 1</h2>
+                <h2></h2>
             </div>
         </div>
         <div class="item">
             <!-- Set the second background image using inline CSS below. -->
-            <div class="fill" style="background-image:url('http://www.qygjxz.com/data/out/89/5411051-futurama-wallpaper.png&text=Slide Two');"></div>
+            <div class="fill" style="background-image:url('https://wallpaperscraft.com/image/prague_charles_bridge_czech_republic_93721_1920x1080.jpg');"></div>
             <div class="carousel-caption">
-                <h2>Caption 2</h2>
+                <h2></h2>
             </div>
         </div>
         <div class="item">
             <!-- Set the third background image using inline CSS below. -->
-            <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Three');"></div>
+            <div class="fill" style="background-image:url('http://www.ewallpapers.eu/sites/default/files/baku-68864-8908102.jpg');"></div>
             <div class="carousel-caption">
-                <h2>Caption 3</h2>
+                <h2></h2>
             </div>
         </div>
     </div>

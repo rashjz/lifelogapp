@@ -36,7 +36,7 @@
                 </div>
             </div>
 
-            <div class="col">
+            <div class="col-md-8">
                 <div class="form-horizontal">
                     <div class="form-group">
                         <h3>Contact Us</h3>

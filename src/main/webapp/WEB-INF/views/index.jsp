@@ -11,7 +11,6 @@
     <meta name="author" content="Rashad Javadov">
     <link rel="icon" type="image/png" href="${pageContext.request.contextPath}/resources/images/fav.png">
 
-    <%--<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>--%>
     <base href="/"/>
     <link rel="stylesheet" type="text/css"
           href="${pageContext.request.contextPath}/webjars/font-awesome/4.7.0/css/font-awesome.css"/>
@@ -20,6 +19,7 @@
     <script type="text/javascript" src="${pageContext.request.contextPath}/webjars/jquery/3.2.1/jquery.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/full-slider.css"/>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/style.css"/>
     <link rel="stylesheet" type="text/css"
           href="${pageContext.request.contextPath}/webjars/bootstrap/3.3.7/css/bootstrap.css"/>
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cerulean/bootstrap.min.css" rel="stylesheet"
@@ -57,7 +57,7 @@
 <jsp:include page="templates/menu.jsp"/>
 
 <div class="container">
-    <div style="margin-top: 7%" class="row">
+    <div  class="row">
 
         <!-- Blog Entries Column -->
         <div class="col-md-8">

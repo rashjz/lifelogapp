@@ -32,7 +32,6 @@ public class LoginController {
     @GetMapping(value = {"/login"})
     public String login(ModelMap modelMap) {
         modelMap.addAttribute("content", "login.jsp");
-        modelMap.addAttribute("navbarlocation", "-bottom");
         return "index";
     }
 
@@ -40,7 +39,7 @@ public class LoginController {
     public String registration(ModelMap modelMap) {
         modelMap.addAttribute("user", new User());
         modelMap.addAttribute("content", "registration.jsp");
-        modelMap.addAttribute("navbarlocation", "-bottom");
+//        modelMap.addAttribute("navbarlocation", "-bottom");
         return "index";
     }
 

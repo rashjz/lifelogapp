@@ -35,7 +35,7 @@
                 </div>
             </div>
 
-            <div style="color: #ffffff"  class="colophon"> © 2017 Lifelog, Inc. (<a href="http://rashjz.info"target="_blank">http://rashjz.info</a>)
+            <div style="color: #ffffff"  class="colophon"> &copy; 2017 Lifelog, Inc. (<a style="color: #ffffff" href="http://rashjz.info" target="_blank">http://rashjz.info</a>)
             </div>
         </div>
     </footer>

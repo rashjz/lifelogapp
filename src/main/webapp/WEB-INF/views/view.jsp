@@ -6,16 +6,17 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <div id="fb-root"></div>
-<script>(function(d, s, id) {
+<script>(function (d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
+    js = d.createElement(s);
+    js.id = id;
     js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.10&appId=888848437872798";
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
 
-<div ng-show="showSingleView" style="margin-top: 5%" class="panel panel-default">
+<div ng-show="showSingleView" class="panel panel-primary">
     <div class="panel-heading">
         <div style="font-weight: bolder;" class="panel-title pull-left">
             {{content.title}}
@@ -34,11 +35,10 @@
                          ng-src="{{content.imagePath == null ? '${pageContext.request.contextPath}/resources/images/emtyimage.png' : content.imagePath}}"/>
                 </div>
                 <div class="col-xs-12 col-sm-3 col-md-3">
-                    <h5>{{content.title}} </h5>
-
-
-                    <h6>Post type : {{content.contentType.name}} <span>Date : {{ content.insertDate | date:'MM/dd/yyyy' }}</span>
-                    </h6>
+                    <h4 style="color: #88c149;font-weight: bold;">{{content.title}} </h4>
+                    <br/>
+                    <p>Post type : {{content.contentType.name}} </p>
+                    <p>Date : {{ content.insertDate | date:'MM/dd/yyyy' }}</p>
                     <p>Written by {{content.author}}</p>
                     <p>{{content.description}}</p>
 
@@ -56,7 +56,7 @@
                        socialshare-provider="twitter"
                        socialshare-text="{{content.title}}"
                        socialshare-hashtags="angularjs, angular-socialshare"
-                       socialshare-url="http://720kb.net">
+                       socialshare-url="http://${pageContext.request.contextPath}/view?cKey={{content.id}}">
                         <span class="fa fa-twitter"></span> Twitter
                     </a>
                 </td>
