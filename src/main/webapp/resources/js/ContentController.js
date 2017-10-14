@@ -11,12 +11,16 @@ angular.module('taskManagerApp').controller('ContentController',
         getAllContentTypes();
 
 
-        console.log($location.search().cKey);
+        $scope.bodyIsReady = function () {
+            $scope.loading = false;
+        };
+
+        // console.log($location.search().cKey);
         if ($location.search() != '{}' && $location.search().cKey != undefined) {
-            ContentService.getContentByID($location.search().cKey ).then(
+            ContentService.getContentByID($location.search().cKey).then(
                 function (response) {
                     $scope.showSingleView = true;
-                    $scope.content=response.data;
+                    $scope.content = response.data;
                     console.log('responseeeeeeeeeee ' + JSON.stringify(response));
                 }, function (error) {
                     console.log(error + " error  during service call")
@@ -45,7 +49,7 @@ angular.module('taskManagerApp').controller('ContentController',
                     console.log(error + " error  during service call")
                     $scope.posts = [];
                 }).finally(function () {
-                $scope.loading = false;
+                // $scope.loading = false;
             });
         }
 

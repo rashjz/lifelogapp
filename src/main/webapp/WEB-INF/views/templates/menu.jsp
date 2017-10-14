@@ -1,3 +1,4 @@
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <nav class="navbar navbar-fixed-top  navbar-default" role="navigation">
     <div class="container">
         <div class="navbar-header">
@@ -13,20 +14,24 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li id="menulink1"><a class="nav-link" href="/content" target="_self">Posts<span class="sr-only">(current)</span></a>
+                <li id="menulink1"><a class="nav-link" href="/content" target="_self"><spring:message code="posts"/><span class="sr-only">(current)</span></a>
                 </li>
-                <li id="menulink3"><a class="nav-link" href="/content?type=2" target="_self">Photos</a></li>
-                <li id="menulink4"><a class="nav-link" href="/about" target="_self">About</a></li>
-                <li id="menulink5"><a href="/contact" target="_self">contact</a></li>
+                <li id="menulink3"><a class="nav-link" href="/content?type=2" target="_self"><spring:message code="photo"/></a></li>
+                <li id="menulink4"><a class="nav-link" href="/about" target="_self"><spring:message code="about"/></a></li>
+                <li id="menulink5"><a href="/contact" target="_self"><spring:message code="contact"/></a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li id="menulink6"><a href="/login" target="_self">Sign In</a></li>
-                <li id="menulink7"><a href="/register" target="_self">Register</a></li>
+                <li id="menulink6"><a href="/login" target="_self"><spring:message code="signin"/></a></li>
+                <li id="menulink7"><a href="/register" target="_self"><spring:message code="register"/></a></li>
+                <li id="menulink8"><a href="/?lang=az"  target="_self"><span>AZ</span></a></li>
+                <li id="menulink9"><a href="/?lang=en" target="_self"><span>EN</span></a></li>
+                <li id="menulink10"><a href="/?lang=ru" target="_self"><span>RU</span></a></li>
+
             </ul>
 
             <form action="projects" method="GET" class="navbar-form navbar-right">
                 <div class="form-group has-feedback">
-                    <label for="search" class="sr-only">Search</label>
+                    <label for="search" class="sr-only"><spring:message code="search"/></label>
                     <input class="form-control" name="search" id="search" ng-model="user.name"
                            placeholder="Search"/>
                     <span class="glyphicon glyphicon-search form-control-feedback"></span>

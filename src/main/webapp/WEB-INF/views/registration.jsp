@@ -1,3 +1,4 @@
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <div class="panel panel-primary">
     <div class="panel-heading">
         <h3 class="panel-title">Registration Form</h3>
@@ -12,32 +13,32 @@
                     <div class="form-group">
                         <div class="col-sm-12">
                             <label class="validation-message"></label>
-                            <input type="text" name="name" placeholder="Name" class="form-control"/>
+                            <input type="text" name="name" placeholder="<spring:message code="name"/>" class="form-control"/>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="col-sm-12">
                             <label class="validation-message"></label>
-                            <input type="text" name="lastname" placeholder="Last Name" class="form-control"/>
+                            <input type="text" name="lastname" placeholder="<spring:message code="lastname"/>" class="form-control"/>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-sm-12">
-                            <input type="text" name="email" placeholder="Email" class="form-control"/>
+                            <input type="text" name="email" placeholder="<spring:message code="email"/>" class="form-control"/>
                             <label class="validation-message"></label>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-sm-12">
-                            <input type="password" placeholder="Password" name="password" class="form-control"/>
+                            <input type="password" placeholder="<spring:message code="password"/>" name="password" class="form-control"/>
                             <label class="validation-message"></label>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="col-sm-12">
-                            <button type="submit" class="btn btn-primary btn-block">Register User</button>
+                            <button type="submit" class="btn btn-primary btn-block"><spring:message code="register"/></button>
                         </div>
                     </div>
 

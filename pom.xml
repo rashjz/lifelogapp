@@ -9,6 +9,8 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
         <springframework.version>4.3.0.RELEASE</springframework.version>
         <hibernate.version>5.2.2.Final</hibernate.version>
         <mysql.connector.version>5.1.18</mysql.connector.version>
@@ -245,6 +247,7 @@
                     <configuration>
                         <source>1.8</source>
                         <target>1.8</target>
+                        <encoding>UTF-8</encoding>
                     </configuration>
                 </plugin>
                 <plugin>

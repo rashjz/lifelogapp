@@ -11,90 +11,22 @@
     </div>
 </script>
 
+<!-- Include CSS for icons. -->
+<%--<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />--%>
+
+<!-- Include Editor style. -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.5.1/css/froala_editor.pkgd.min.css" rel="stylesheet"
+      type="text/css"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.5.1/css/froala_style.min.css" rel="stylesheet"
+      type="text/css"/>
+
+<!-- Create a tag that we will use as the editable area. -->
+<!-- You can use a div tag as well. -->
+
 
 <div style="font-weight: bold;" class="container">
-    <div ng-controller="ContentController" style="margin-top: 6%;">
+    <div ng-controller="ContentController" style="margin-top: 2%;">
 
-
-        <div class="row">
-            <div class="col-xs-6">
-
-
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <span class="panel-title">Content Edit</span>
-                    </div>
-
-                    <div class="panel-body">
-
-                        <div class="col-sm-9">
-                            <div class="form-group"> <!-- Date input -->
-                                <label class="control-label" for="date">Date</label>
-                                <input class="form-control" id="date" name="date" placeholder="YYYY/MM/DD"
-                                       ng-model="content.insertDate" type="text"/>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-9">
-                            <label class="control-label" for="title">Title</label>
-                            <input type="text" class="form-control" name="title" id="title" placeholder="Title"
-                                   ng-model="content.title"/>
-                        </div>
-                        <div class="col-sm-9">
-                            <label class="control-label" for="desc">Description</label>
-                            <textarea type="text" class="form-control" name="desc" id="desc"
-                                      ng-model="content.description"></textarea>
-                        </div>
-                        <div class="col-sm-9">
-                            <label class="control-label" for="author">Author</label>
-                            <input type="text" id="author" name="author" class="form-control" placeholder="Author"
-                                   ng-model="content.author"/>
-                        </div>
-                        <div class="col-sm-9">
-                            <label class="control-label" for="types">Type</label>
-                            <select class="form-control" id="types"
-                                    ng-options="o.name for o in contentTypes track by o.id"
-                                    ng-model="content.contentType">
-                            </select>
-                        </div>
-                        <div class="col-sm-9">
-                            <label class="control-label" for="status">Status</label>
-                            <input type="text" class="form-control" id="status" placeholder="Status"
-                                   ng-model="content.status"/>
-                        </div>
-
-                        <div style="margin-top: 5px;" class="col-sm-9">
-                            <button ng-click="newContent()" class="btn btn-primary">New</button>
-                            <button ng-click="editContent()" class="btn btn-success">Save</button>
-                            <button ng-click="deleteContent()" class="btn btn-danger">Delete</button>
-
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-
-            <div class="col-xs-6">
-                <div style="margin-top: 2px;" class="panel panel-primary">
-                    <div class="panel-heading">
-                        <span class="panel-title">Content Edit</span>
-                    </div>
-                    <div class="panel-body">
-                        <img class="img-responsive img-box img-thumbnail"
-                             ng-src="{{content.imagePath == null ? 'images/emtyimage.png' : content.imagePath}}"/>
-
-                        <label class="btn btn-default btn-file">
-                            Browse <input ng-file-select="onFileSelect($files)" style="display: none;" type="file"/>
-                        </label>
-
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <div style="margin-top: 10px;" class="row">
 
@@ -149,6 +81,88 @@
 
         </div>
 
+
+        <div class="row">
+            <div> <!-- class="col-xs-6" -->
+
+
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <span class="panel-title">Content Edit</span>
+                    </div>
+
+                    <div class="panel-body">
+
+                        <div>
+                            <div class="form-group"> <!-- Date input -->
+                                <label class="control-label" for="date">Date</label>
+                                <input class="form-control" id="date" name="date" placeholder="YYYY/MM/DD"
+                                       ng-model="content.insertDate" type="text"/>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="control-label" for="title">Title</label>
+                            <input type="text" class="form-control" name="title" id="title" placeholder="Title"
+                                   ng-model="content.title"/>
+                        </div>
+                        <div>
+                            <label class="control-label" for="desc">Description</label>
+                            <textarea type="text" class="form-control" name="desc" id="desc"
+                                      ng-model="content.description"></textarea>
+                        </div>
+                        <div>
+                            <label class="control-label" for="author">Author</label>
+                            <input type="text" id="author" name="author" class="form-control" placeholder="Author"
+                                   ng-model="content.author"/>
+                        </div>
+                        <div>
+                            <label class="control-label" for="types">Type</label>
+                            <select class="form-control" id="types"
+                                    ng-options="o.name for o in contentTypes track by o.id"
+                                    ng-model="content.contentType">
+                            </select>
+                        </div>
+                        <div>
+                            <label class="control-label" for="status">Status</label>
+                            <input type="text" class="form-control" id="status" placeholder="Status"
+                                   ng-model="content.status"/>
+                        </div>
+
+                        <div style="margin-top: 5px;">
+                            <button ng-click="newContent()" class="btn btn-primary">New</button>
+                            <button ng-click="editContent()" class="btn btn-success">Save</button>
+                            <button ng-click="deleteContent()" class="btn btn-danger">Delete</button>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+            <div><!-- class="col-xs-6" -->
+                <div style="margin-top: 2px;" class="panel panel-primary">
+                    <div class="panel-heading">
+                        <span class="panel-title">Content Edit</span>
+                    </div>
+                    <div class="panel-body">
+                        <img class="img-responsive img-box img-thumbnail"
+                             ng-src="{{content.imagePath == null ? 'images/emtyimage.png' : content.imagePath}}"/>
+
+                        <label class="btn btn-default btn-file">
+                            Browse <input ng-file-select="onFileSelect($files)" style="display: none;" type="file"/>
+                        </label>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </div>
 </div>
 
@@ -165,7 +179,23 @@
 </script>
 
 
+<!-- Include jQuery lib. -->
+<%--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>--%>
+
+<!-- Include Editor JS files. -->
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.5.1//js/froala_editor.pkgd.min.js"></script>
+
+<!-- Initialize the editor. -->
+<script>
+    $(function () {
+        $('textarea').froalaEditor()
+    });
+</script>
+
+
 <script type="application/javascript" src="${pageContext.request.contextPath}/resources/js/FileUpload.js"></script>
 <script type="application/javascript" src="${pageContext.request.contextPath}/resources/js/ModalController.js"></script>
 <script type="application/javascript" src="${pageContext.request.contextPath}/resources/js/ContentService.js"></script>
-<script type="application/javascript" src="${pageContext.request.contextPath}/resources/js/ContentController.js"></script>
+<script type="application/javascript"
+        src="${pageContext.request.contextPath}/resources/js/ContentController.js"></script>

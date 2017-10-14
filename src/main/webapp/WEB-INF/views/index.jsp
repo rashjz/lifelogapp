@@ -61,7 +61,7 @@
 
         <!-- Blog Entries Column -->
         <div class="col-md-8">
-            <%--<spring:message code="test"/>--%>
+
             <jsp:include page="${content}"/>
 
         </div>

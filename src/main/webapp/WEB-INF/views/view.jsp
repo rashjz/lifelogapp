@@ -30,11 +30,11 @@
 
         <div class="panel panel-primary">
             <div class="row">
-                <div class="col-xs-12 col-sm-3 col-md-3">
+                <div class="col-xs-6 col-sm-6 col-md-6">
                     <img class="img-responsive img-box img-thumbnail"
                          ng-src="{{content.imagePath == null ? '${pageContext.request.contextPath}/resources/images/emtyimage.png' : content.imagePath}}"/>
                 </div>
-                <div class="col-xs-12 col-sm-3 col-md-3">
+                <div class="col-xs-6 col-sm-6 col-md-6">
                     <h4 style="color: #88c149;font-weight: bold;">{{content.title}} </h4>
                     <br/>
                     <p>Post type : {{content.contentType.name}} </p>
