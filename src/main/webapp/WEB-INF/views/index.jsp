@@ -38,17 +38,25 @@
             src="${pageContext.request.contextPath}/webjars/angularjs/1.6.4/angular-animate.js"></script>
 
     <script type="text/javascript"
-            src="${pageContext.request.contextPath}/resources/js/ui-bootstrap-tpls-2.5.0.min.js"></script>
+            src="${pageContext.request.contextPath}/resources/js/bootstrap/ui-bootstrap-tpls-2.5.0.min.js"></script>
     <script type="text/javascript"
             src="${pageContext.request.contextPath}/resources/js/angular-socialshare.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/lifelog-app.js"></script>
+    <script type="text/javascript"
+            src="${pageContext.request.contextPath}/webjars/angularjs/1.6.4/angular-sanitize.js"></script>
 
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/lifelog-app.js"></script>
 
     <script type="text/javascript"
             src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+    <script src="${pageContext.request.contextPath}/resources/js/froala/angular-froala.js"></script>
 
+    <!-- Include Editor style. -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.5.1/css/froala_editor.pkgd.min.css" rel="stylesheet"
+          type="text/css"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.5.1/css/froala_style.min.css" rel="stylesheet"
+          type="text/css"/>
 </head>
 <body ng-app="taskManagerApp">
 
@@ -57,7 +65,7 @@
 <jsp:include page="templates/menu.jsp"/>
 
 <div class="container">
-    <div  class="row">
+    <div class="row">
 
         <!-- Blog Entries Column -->
         <div class="col-md-8">
@@ -82,6 +90,11 @@
     <jsp:include page="templates/footer.jsp"/>
 
 </div>
+
+<!-- Include Editor JS files. -->
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.5.1//js/froala_editor.pkgd.min.js"></script>
+
 
 </body>
 </html>

@@ -14,6 +14,7 @@ import rashjz.info.app.springboot.model.User;
 import rashjz.info.app.springboot.repository.RoleRepository;
 import rashjz.info.app.springboot.service.UserService;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import java.util.HashSet;
 import java.util.Set;
@@ -30,7 +31,8 @@ public class LoginController {
     private RoleRepository roleRepository;
 
     @GetMapping(value = {"/login"})
-    public String login(ModelMap modelMap) {
+    public String login(ModelMap modelMap, final HttpServletResponse response) {
+//        response.setHeader("Cache-Control", "no-cache");
         modelMap.addAttribute("content", "login.jsp");
         return "index";
     }

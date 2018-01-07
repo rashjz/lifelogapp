@@ -50,13 +50,24 @@ public class ContentRestController {
     @PostMapping(value = "/contentupdate/")
     public @ResponseBody
     Content addContent(@RequestBody Content content) {
-        contentService.saveContent(content);
+        try {
+            contentService.saveContent(content);
+        }catch (Exception e){
+            e.printStackTrace();
+            logger.error("Error while saving data "+e.getMessage());
+            content.setNote(e.getMessage());
+        }
+
         return content;
     }
 
     @DeleteMapping(value = "/contentdelete/{id}")
     public void deleteContent(@PathVariable(value = "id") long id) {
-        contentService.deleteContentById(Long.valueOf(id));
+       try {
+           contentService.deleteContentById(Long.valueOf(id));
+       }catch (Exception e){
+           e.printStackTrace();
+       }
     }
 
     @GetMapping(value = "/content/{id}")

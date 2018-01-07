@@ -6,7 +6,7 @@ package rashjz.info.app.springboot.utils;
  */
 public class StaticParams {
 
-    public static String WINDOWS_LOCATION = "D://uploads/";  //fileI/ other location just D
+    public static String WINDOWS_LOCATION = "E://uploads/";  //fileI/ other location just D
     public static String LINUX_LOCATION = "/home/rashad/uploads/lifelog/";  //fileI/ other location just D
     public static String OS = "Windows 10";
 

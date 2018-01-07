@@ -70,6 +70,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 //		filter.setForceEncoding(true);
 //		http.addFilterBefore(filter,CsrfFilter.class);
 //		//rest of your code
+
+//		http.headers()
+//				.frameOptions().sameOrigin()
+//				.httpStrictTransportSecurity().disable();
+
 		http.
 			authorizeRequests()
 				.antMatchers("/").permitAll()

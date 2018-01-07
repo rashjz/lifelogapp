@@ -1,4 +1,4 @@
-var app = angular.module('taskManagerApp', ['ngResource', 'ui.bootstrap', 'ngRoute', '720kb.socialshare']).config(function ($routeProvider, $locationProvider, $httpProvider) {
+var app = angular.module('taskManagerApp', ['ngResource', 'ui.bootstrap', 'ngRoute', '720kb.socialshare', 'froala', 'ngSanitize']).config(function ($routeProvider, $locationProvider, $httpProvider) {
     // $routeProvider //'djds4rce.angular-socialshare',
     //     .when("/",
     //         {
@@ -24,6 +24,23 @@ var app = angular.module('taskManagerApp', ['ngResource', 'ui.bootstrap', 'ngRou
 
 });
 
+
+// ng-bind-html and froala-view will not compile into angular for security reasons.
+angular.module('taskManagerApp')
+    .directive('compileHtml', [
+        '$compile',
+        function ($compile) {
+            return {
+                restrict: 'A',
+                link: function (scope, element, attrs) {
+                    scope.$watch(attrs.compileHtml, function (newValue, oldValue) {
+                        element.html(newValue);
+                        $compile(element.contents())(scope);
+                    });
+                }
+            };
+        }
+    ]);
 
 app.constant('urls', {
     BASE: 'http://localhost:8080/',

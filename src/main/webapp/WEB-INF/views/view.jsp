@@ -19,7 +19,8 @@
 <div ng-show="showSingleView" class="panel panel-primary">
     <div class="panel-heading">
         <div style="font-weight: bolder;" class="panel-title pull-left">
-            {{content.title}}
+           <a id="link-1" href ng-click="change()"><u>Show All ></u></a>  <u>{{content.title}}</u>
+
         </div>
         <div class="panel-title pull-right"> Date : {{ content.insertDate | date:'MM/dd/yyyy' }}</div>
         <div class="clearfix"></div>
@@ -40,7 +41,7 @@
                     <p>Post type : {{content.contentType.name}} </p>
                     <p>Date : {{ content.insertDate | date:'MM/dd/yyyy' }}</p>
                     <p>Written by {{content.author}}</p>
-                    <p>{{content.description}}</p>
+                    <div compile-html="content.description"></div>
 
                 </div>
             </div>

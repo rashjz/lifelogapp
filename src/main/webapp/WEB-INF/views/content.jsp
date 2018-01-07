@@ -32,7 +32,7 @@
                                     <span>Date : {{ post.insertDate | date:'MM/dd/yyyy' }}</span>
                                     <p><a href="#">Post type : {{post.contentType.name}} </a></p>
                                     <p>Written by {{post.author}}</p>
-                                    <p>{{post.description}}</p>
+                                    <%--<p>{{post.description}}</p>--%>
                                 </div>
                             </div>
                         </div>

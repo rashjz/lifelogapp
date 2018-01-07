@@ -7,10 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.util.UriComponentsBuilder;
 import rashjz.info.app.springboot.model.Content;
+import rashjz.info.app.springboot.model.UploadResponse;
 import rashjz.info.app.springboot.model.User;
 import rashjz.info.app.springboot.service.UserService;
 import rashjz.info.app.springboot.utils.CustomErrorType;
@@ -104,7 +106,7 @@ public class UserRestController {
 //        return new ResponseEntity<User>(HttpStatus.NO_CONTENT);
 //    }
 
-//
+    //
 //    @DeleteMapping(value = "/user/")
 //    public ResponseEntity<User> deleteAllUsers() {
 ////        logger.info("Deleting All Users");
@@ -112,11 +114,10 @@ public class UserRestController {
 //        userService.deleteAllUsers();
 //        return new ResponseEntity<User>(HttpStatus.NO_CONTENT);
 //    }
-
     @PostMapping(value = "/upload/")
     public @ResponseBody
     Content doStuff(@RequestParam("file") MultipartFile file,
-                    @RequestParam("id") String id) {
+                    @RequestParam(value = "id") String id) {
         String fileName = "";
         //@RequestPart("json") @Valid MyDto dto,
 //        logger.info("file :::::::::::::::: " + file.getName() + file.getOriginalFilename() + " -----  " + id.toString());
@@ -133,8 +134,29 @@ public class UserRestController {
         }
         Content content = new Content();
         content.setImagePath("/uploads/" + fileName);
-
         return content;
+    }
+
+
+    @PreAuthorize("permitAll()")
+    @PostMapping(value = "/uploadfroala/")
+    public @ResponseBody
+    UploadResponse froalaUpload(@RequestParam("file") MultipartFile file) {
+        String fileName = "";
+
+        try {
+            // Get the file and save it somewhere
+            byte[] bytes = file.getBytes();
+            fileName = UUID.randomUUID().toString() + "." + getExt(file.getOriginalFilename());
+
+            Path path = Paths.get(StaticParams.getUploadLocation() + fileName);
+            Files.write(path, bytes);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        fileName="http://localhost:8082/uploads/" + fileName;
+        UploadResponse response =new UploadResponse(fileName);
+        return response;
     }
 
     public static String getExt(String fileName) {

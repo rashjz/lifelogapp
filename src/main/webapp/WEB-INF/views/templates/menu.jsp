@@ -21,7 +21,7 @@
                 <li id="menulink5"><a href="/contact" target="_self"><spring:message code="contact"/></a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li id="menulink6"><a href="/login" target="_self"><spring:message code="signin"/></a></li>
+                <li id="menulink6"><a href="/admincontent" target="_self"><spring:message code="signin"/></a></li>
                 <li id="menulink7"><a href="/register" target="_self"><spring:message code="register"/></a></li>
                 <li id="menulink8"><a href="/?lang=az"  target="_self"><span>AZ</span></a></li>
                 <li id="menulink9"><a href="/?lang=en" target="_self"><span>EN</span></a></li>
