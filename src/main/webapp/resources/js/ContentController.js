@@ -2,6 +2,7 @@ angular.module('taskManagerApp').controller('ContentController',
     ['$scope', 'ContentService', 'uploadService', '$uibModal', '$location', function ($scope, ContentService, uploadService, $uibModal, $location) {
         $scope.loading = true;
         $scope.searchTerm = '';
+        $scope.errorMessage = '';
         $scope.totalItems;
         $scope.currentPage = 1;
         $scope.itemsPerPage = 3;
@@ -11,7 +12,7 @@ angular.module('taskManagerApp').controller('ContentController',
         getAllContentTypes();
 
         $scope.froalaOptions = {
-            toolbarButtons :['fullscreen', 'bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', '|', 'fontFamily', 'fontSize', 'color', 'inlineStyle', 'paragraphStyle', '|', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', 'quote', '-', 'insertLink', 'insertImage', 'insertVideo', 'embedly', 'insertFile', 'insertTable', '|', 'emoticons', 'specialCharacters', 'insertHR', 'selectAll', 'clearFormatting', '|', 'print', 'spellChecker', 'help', 'html', '|', 'undo', 'redo'],
+            toolbarButtons: ['fullscreen', 'bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', '|', 'fontFamily', 'fontSize', 'color', 'inlineStyle', 'paragraphStyle', '|', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', 'quote', '-', 'insertLink', 'insertImage', 'insertVideo', 'embedly', 'insertFile', 'insertTable', '|', 'emoticons', 'specialCharacters', 'insertHR', 'selectAll', 'clearFormatting', '|', 'print', 'spellChecker', 'help', 'html', '|', 'undo', 'redo'],
 
             // Set the image upload parameter.
             // imageUploadParam: 'file',
@@ -67,7 +68,8 @@ angular.module('taskManagerApp').controller('ContentController',
                     console.log(JSON.stringify(response) + " zzzzzzzzzzzzzzzzzzzzzzz")
 
                 }, function (error) {
-                    console.log(error + " error  during service call")
+                    console.log(error + " error  during service call");
+                    $scope.errorMessage = 'Error occured! ' + error;
                     $scope.posts = [];
                 }).finally(function () {
                 // $scope.loading = false;
@@ -78,9 +80,12 @@ angular.module('taskManagerApp').controller('ContentController',
             ContentService.updateContent($scope.content).then(
                 function (response) {
                     console.log('responseeeeeeeeeee ' + JSON.stringify(response));
+                    if (response == 'undefined' || response.data.note != null || response.data.note != '') {
+                        $scope.errorMessage = 'Error occured! ' + response.data.note;
+                    }
                 }, function (error) {
                     console.log(error + " error  during service call")
-                    $scope.posts = [];
+                    $scope.errorMessage = 'Error occured! ' + error;
                 });
         };
 
@@ -91,6 +96,7 @@ angular.module('taskManagerApp').controller('ContentController',
                 }, function (error) {
                     console.log(error + " error  during service call")
                     $scope.contentTypes = [];
+                    $scope.errorMessage = 'Error occured! ' + error;
                 });
         }
 
@@ -106,12 +112,12 @@ angular.module('taskManagerApp').controller('ContentController',
                             function (response) {
                                 getAllPosts();
                             }, function (error) {
-                                console.log(error + " error  during service call")
-                                $scope.contentTypes = [];
+                                console.log(error + " error  during service call");
+                                $scope.errorMessage = 'error occured! ' + error;
                             });
                     },
                     function (error) {
-                        // console.log("cancel");
+                        $scope.errorMessage = 'Error occured! ' + error;
                     }
                 );
             }
@@ -143,7 +149,7 @@ angular.module('taskManagerApp').controller('ContentController',
                     $scope.content.imagePath = response.data.imagePath;
                 }, function (error) {
                     console.log(error + " error  during service call")
-                    // $scope.users = [];
+                    $scope.errorMessage = 'Error occured! ' + error;
                 });
         };
 

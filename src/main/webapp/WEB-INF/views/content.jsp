@@ -1,4 +1,4 @@
-<div ng-controller="ContentController" >
+<div ng-controller="ContentController">
 
     <div ng-show="!showSingleView" when-ready="bodyIsReady()" class="panel panel-primary">
         <div class="panel-heading">
@@ -14,30 +14,26 @@
         <div class="panel-body">
 
             <div ng-repeat="post in posts">
-                <div class="col-xs-12 col-sm-3 col-md-3">
-                    <a href="#">
+
+                <div class="col-md-4">
+                    <div class="thumbnail">
                         <img class="img-responsive img-box img-thumbnail" ng-click="selectRow(post)"
                              style="max-width: 150px;min-width: 150px;min-height: 175px;max-height: 175px;"
                              ng-src="{{post.imagePath == null ? '${pageContext.request.contextPath}/resources/images/emtyimage.png' : post.imagePath}}"/>
-                    </a>
-                </div>
-                <div class="col-xs-12 col-sm-3 col-md-3">
-                    <div class="list-group">
-                        <div class="list-group-item">
-                            <div class="row-content">
-                                <div class="list-group-item-heading">
-                                    <a href="#" title="">
-                                        <h4 style="color: #88c149;font-weight: bold;">{{post.title}} </h4>
-                                    </a>
-                                    <span>Date : {{ post.insertDate | date:'MM/dd/yyyy' }}</span>
-                                    <p><a href="#">Post type : {{post.contentType.name}} </a></p>
-                                    <p>Written by {{post.author}}</p>
-                                    <%--<p>{{post.description}}</p>--%>
-                                </div>
-                            </div>
+                        <div class="caption">
+                            <h4 style="color: #88c149;font-weight: bold;">{{post.title}} </h4>
+                            <span>Date : {{ post.insertDate | date:'MM/dd/yyyy' }}</span>
+                            <p><a href="#">Post type : {{post.contentType.name}} </a></p>
+                            <p>Written by {{post.author}}</p>
+
+                            <p align="center"><a href ng-click="selectRow(post)" class="btn btn-primary btn-block">Read
+                                More</a>
+                            </p>
                         </div>
                     </div>
                 </div>
+
+
             </div>
 
 

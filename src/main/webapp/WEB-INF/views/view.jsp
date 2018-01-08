@@ -19,7 +19,7 @@
 <div ng-show="showSingleView" class="panel panel-primary">
     <div class="panel-heading">
         <div style="font-weight: bolder;" class="panel-title pull-left">
-           <a id="link-1" href ng-click="change()"><u>Show All ></u></a>  <u>{{content.title}}</u>
+            <a id="link-1" href ng-click="change()"><u>Show All ></u></a> <u>{{content.title}}</u>
 
         </div>
         <div class="panel-title pull-right"> Date : {{ content.insertDate | date:'MM/dd/yyyy' }}</div>
@@ -28,24 +28,43 @@
 
     <div class="panel-body">
 
-
-        <div class="panel panel-primary">
+        <div class="paragraphs">
             <div class="row">
-                <div class="col-xs-6 col-sm-6 col-md-6">
-                    <img class="img-responsive img-box img-thumbnail"
+                <div class="span4">
+                    <img style="float:left;margin-left: 10px; margin-right: 10px;" class="img-responsive img-box img-thumbnail"
                          ng-src="{{content.imagePath == null ? '${pageContext.request.contextPath}/resources/images/emtyimage.png' : content.imagePath}}"/>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-6">
-                    <h4 style="color: #88c149;font-weight: bold;">{{content.title}} </h4>
-                    <br/>
+                    <div class="content-heading">
+                        <h4>
+                            &nbsp <p style="color: #88c149;font-weight: bold;">Written by {{content.title}}</p> &nbsp
+                        </h4>
+                    </div>
                     <p>Post type : {{content.contentType.name}} </p>
                     <p>Date : {{ content.insertDate | date:'MM/dd/yyyy' }}</p>
-                    <p>Written by {{content.author}}</p>
-                    <div compile-html="content.description"></div>
-
+                    <p>
+                    <div style="margin-left: 10px;" compile-html="content.description"></div>
+                    </p>
+                    <p style="margin-left: 10px;" >Written by {{content.author}}</p>
                 </div>
             </div>
         </div>
+
+        <%--<div class="panel panel-primary">--%>
+        <%--<div class="row">--%>
+        <%--<div class="col-xs-6 col-sm-6 col-md-6">--%>
+        <%--<img class="img-responsive img-box img-thumbnail"--%>
+        <%--ng-src="{{content.imagePath == null ? '${pageContext.request.contextPath}/resources/images/emtyimage.png' : content.imagePath}}"/>--%>
+        <%--</div>--%>
+        <%--<div class="col-xs-6 col-sm-6 col-md-6">--%>
+        <%--<h4 style="color: #88c149;font-weight: bold;">{{content.title}} </h4>--%>
+        <%--<br/>--%>
+        <%--<p>Post type : {{content.contentType.name}} </p>--%>
+        <%--<p>Date : {{ content.insertDate | date:'MM/dd/yyyy' }}</p>--%>
+        <%--<p>Written by {{content.author}}</p>--%>
+        <%--<div compile-html="content.description"></div>--%>
+
+        <%--</div>--%>
+        <%--</div>--%>
+        <%--</div>--%>
 
 
         <table>
@@ -56,7 +75,7 @@
                        socialshare
                        socialshare-provider="twitter"
                        socialshare-text="{{content.title}}"
-                       socialshare-hashtags="angularjs, angular-socialshare"
+                       <%--socialshare-hashtags="angularjs, angular-socialshare"--%>
                        socialshare-url="http://${pageContext.request.contextPath}/view?cKey={{content.id}}">
                         <span class="fa fa-twitter"></span> Twitter
                     </a>
@@ -66,8 +85,8 @@
                        socialshare
                        socialshare-provider="facebook"
                        socialshare-text="{{content.title}}"
-                       socialshare-hashtags="angularjs, angular-socialshare"
-                       socialshare-url="http://720kb.net">
+                       <%--socialshare-hashtags="angularjs, angular-socialshare"--%>
+                       socialshare-url="http://${pageContext.request.contextPath}/view?cKey={{content.id}}">
                         <span class="fa fa-facebook"></span> Facebook
                     </a>
                 </td>
@@ -76,8 +95,8 @@
                        socialshare
                        socialshare-provider="linkedin"
                        socialshare-text="{{content.title}}"
-                       socialshare-description="angularjs, angular-socialshare"
-                       socialshare-url="http://720kb.net"
+                       <%--socialshare-description="angularjs, angular-socialshare"--%>
+                       socialshare-url="http://${pageContext.request.contextPath}/view?cKey={{content.id}}"
                        socialshare-source="">
                         <span class="fa fa-linkedin"></span> Linkedin
                     </a>
@@ -87,8 +106,8 @@
                        socialshare
                        socialshare-provider="vk"
                        socialshare-text="{{content.title}}"
-                       socialshare-description="angularjs, angular-socialshare"
-                       socialshare-url="http://720kb.net"
+                       <%--socialshare-description="angularjs, angular-socialshare"--%>
+                       socialshare-url="http://${pageContext.request.contextPath}/view?cKey={{content.id}}"
                        socialshare-media="#">
                         <span class="fa fa-vk"></span> VK
                     </a>
@@ -97,7 +116,7 @@
                     <a href="#" class="btn btn-block btn-social btn-google"
                        socialshare
                        socialshare-provider="google"
-                       socialshare-url="http://720kb.net">
+                       socialshare-url="http://${pageContext.request.contextPath}/view?cKey={{content.id}}">
                         <span class="fa fa-google"></span> Google
                     </a>
                 </td>
@@ -105,7 +124,7 @@
                     <a href="#" class="btn btn-block btn-social btn-evernote"
                        socialshare
                        socialshare-provider="evernote"
-                       socialshare-url="http://720kb.net"
+                       socialshare-url="http://${pageContext.request.contextPath}/view?cKey={{content.id}}"
                        socialshare-text="{{content.title}}">
                         <span class="fa fa-envelope-o"></span> Evernote
                     </a>

@@ -121,10 +121,16 @@
                         </div>
                         <div>
                             <label class="control-label" for="status">Status</label>
-                            <input type="text" class="form-control" id="status" placeholder="Status"
-                                   ng-model="content.status"/>
+                            <%--<input type="text" class="form-control" id="status" placeholder="Status"--%>
+                                   <%--ng-model="content.status"/>--%>
+                            <select class="form-control" id="status" ng-model="content.status">
+                                <option value="a" ng-selected="content.status =='a'">Aktiv</option>
+                                <option value="d" ng-selected="content.status =='d'">Deaktiv</option>
+                            </select>
                         </div>
-
+                        <div ng-hide="!errorMessage" ng-dblclick="errorMessage=''" class="alert alert-danger fade in alert-dismissable">
+                            <strong>{{errorMessage}}</strong>
+                        </div>
                         <div style="margin-top: 5px;">
                             <button ng-click="newContent()" class="btn btn-primary">New</button>
                             <button ng-click="editContent()" class="btn btn-success">Save</button>

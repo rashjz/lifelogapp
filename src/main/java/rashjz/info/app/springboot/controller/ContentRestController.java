@@ -55,7 +55,7 @@ public class ContentRestController {
         }catch (Exception e){
             e.printStackTrace();
             logger.error("Error while saving data "+e.getMessage());
-            content.setNote(e.getMessage());
+            content.setNote(e.toString());
         }
 
         return content;

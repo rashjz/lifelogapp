@@ -1,7 +1,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <div style="margin-top: 5%" class="footer navbar-fixed${navbarlocation}">
 
-    <footer style="background: #1995dc; color: #ffffff;border-color: #1995dc;" class="site-footer navbar-default">
+    <footer style="background: #1995dc; color: #ffffff;border-color: #1995dc;" class="panel site-footer navbar-default">
         <hr/>
         <div class="container">
             <div class="row ">
