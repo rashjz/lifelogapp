@@ -43,8 +43,11 @@
             src="${pageContext.request.contextPath}/resources/js/angular-socialshare.js"></script>
     <script type="text/javascript"
             src="${pageContext.request.contextPath}/webjars/angularjs/1.6.4/angular-sanitize.js"></script>
+    <script type="text/javascript"
+            src="${pageContext.request.contextPath}/webjars/angularjs/1.6.4/angular-loader.js"></script>
 
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/lifelog-app.js"></script>
+
 
     <script type="text/javascript"
             src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
@@ -53,48 +56,49 @@
     <script src="${pageContext.request.contextPath}/resources/js/froala/angular-froala.js"></script>
 
     <!-- Include Editor style. -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.5.1/css/froala_editor.pkgd.min.css" rel="stylesheet"
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.5.1/css/froala_editor.pkgd.min.css"
+          rel="stylesheet"
           type="text/css"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.5.1/css/froala_style.min.css" rel="stylesheet"
           type="text/css"/>
+
+
 </head>
-<body ng-app="taskManagerApp">
+<body ng-cloak ng-app="taskManagerApp">
+    <!-- Page Content -->
 
-<!-- Page Content -->
+    <jsp:include page="templates/menu.jsp"/>
 
-<jsp:include page="templates/menu.jsp"/>
+    <div class="container">
+        <div class="row">
 
-<div class="container">
-    <div class="row">
+            <!-- Blog Entries Column -->
+            <div class="col-md-8">
 
-        <!-- Blog Entries Column -->
-        <div class="col-md-8">
+                <jsp:include page="${content}"/>
 
-            <jsp:include page="${content}"/>
+            </div>
+            <c:choose>
+                <c:when test="${sidebar != null }">
+                    <br/>
+                </c:when>
+                <c:otherwise>
+                    <jsp:include page="templates/sidebar.jsp"/>
+                </c:otherwise>
+            </c:choose>
+
 
         </div>
-        <c:choose>
-            <c:when test="${sidebar != null }">
-                <br/>
-            </c:when>
-            <c:otherwise>
-                <jsp:include page="templates/sidebar.jsp"/>
-            </c:otherwise>
-        </c:choose>
+        <!-- /.row -->
 
+
+        <jsp:include page="templates/footer.jsp"/>
 
     </div>
-    <!-- /.row -->
 
-
-    <jsp:include page="templates/footer.jsp"/>
-
-</div>
-
-<!-- Include Editor JS files. -->
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.5.1//js/froala_editor.pkgd.min.js"></script>
-
+    <!-- Include Editor JS files. -->
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.5.1//js/froala_editor.pkgd.min.js"></script>
 
 </body>
 </html>

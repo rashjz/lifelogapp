@@ -19,11 +19,6 @@ import java.util.Set;
 public class NavigationController {
     public static final Logger logger = LoggerFactory.getLogger(NavigationController.class);
 
-    @GetMapping("/task")
-    String home(ModelMap modelMap) {
-        modelMap.addAttribute("content", "task");
-        return "index";
-    }
 
     @GetMapping({"/","/content","/view"})
     String getContentPage(ModelMap modelMap) {

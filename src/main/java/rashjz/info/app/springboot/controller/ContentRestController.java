@@ -3,18 +3,12 @@ package rashjz.info.app.springboot.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.convert.converter.Converter;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 import rashjz.info.app.springboot.model.Content;
 import rashjz.info.app.springboot.model.LazyLoad;
 import rashjz.info.app.springboot.service.ContentService;
-
-import java.util.Iterator;
-import java.util.List;
 
 /**
  * Created by Rashad Javadov
@@ -35,7 +29,7 @@ public class ContentRestController {
                              @RequestParam("page") Integer page,
                              @RequestParam("size") Integer size) {
         //http://localhost:8080/apicontent/contents?searchTerm=&page=0&size=10
-        logger.info("searchTerm ::::: " + searchTerm + " page ::::: " + page + " size ::::: " + size);
+        logger.info("listAllContents lazy loading searchTerm : " + searchTerm + " page  " + page + " size : " + size);
         Pageable pageable = new PageRequest(page, size, null);
         if (String.valueOf(searchTerm).isEmpty()) {
             searchTerm = "%";
@@ -73,7 +67,7 @@ public class ContentRestController {
     @GetMapping(value = "/content/{id}")
     public @ResponseBody
     Content getContentById(@PathVariable Long id) {
-        logger.info("id ::::: " + id);
+        logger.info("Getting Content for id: " + id);
         Content content = contentService.findById(id);
         return content;
     }

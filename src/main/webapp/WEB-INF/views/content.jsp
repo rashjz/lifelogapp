@@ -49,11 +49,13 @@
         max-size="7" rotate="false" previous-text="&lsaquo;" next-text="&rsaquo;"
         first-text="&laquo;" last-text="&raquo;"/>
 
-    <div ng-show="loading" class="loading">Loading&#8230;</div>
+    <div id="spinner" ng-show="loading"  class="loading">Loading&#8230;</div>
+
 </div>
 
 
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/FileUpload.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/ContentService.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/ContentController.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/CompileHtmlDrirective.js"></script>
 

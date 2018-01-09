@@ -1,6 +1,7 @@
 angular.module('taskManagerApp').controller('ContentController',
     ['$scope', 'ContentService', 'uploadService', '$uibModal', '$location', function ($scope, ContentService, uploadService, $uibModal, $location) {
         $scope.loading = true;
+
         $scope.searchTerm = '';
         $scope.errorMessage = '';
         $scope.totalItems;
@@ -33,17 +34,16 @@ angular.module('taskManagerApp').controller('ContentController',
             imageAllowedTypes: ['jpeg', 'jpg', 'png']
         };
 
-        $scope.bodyIsReady = function () {
-            $scope.loading = false;
-        };
+        // $scope.bodyIsReady = function () {
+        //     $scope.loading = false;
+        // };
 
-        // console.log($location.search().cKey);
         if ($location.search() != '{}' && $location.search().cKey != undefined) {
             ContentService.getContentByID($location.search().cKey).then(
                 function (response) {
                     $scope.showSingleView = true;
                     $scope.content = response.data;
-                    console.log('responseeeeeeeeeee ' + JSON.stringify(response));
+                    console.log('load content by url content ID ' + JSON.stringify(response));
                 }, function (error) {
                     console.log(error + " error  during service call")
                     $scope.posts = [];
@@ -57,29 +57,26 @@ angular.module('taskManagerApp').controller('ContentController',
 
 
         function getAllPosts() {
-            $scope.loading = true;
             $scope.showSingleView = false;
 
             ContentService.getAllPosts($scope.searchTerm, $scope.currentPage - 1, $scope.itemsPerPage).then(
                 function (response) {
-                    console.log("-------------- $scope.searchTerm " + $scope.searchTerm + " $scope.currentPage " + $scope.currentPage + " $scope.itemsPerPage " + $scope.itemsPerPage);
+                    console.log("searchTerm " + $scope.searchTerm + " currentPage " + $scope.currentPage + " itemsPerPage " + $scope.itemsPerPage);
                     $scope.posts = response.data.posts;
                     $scope.totalItems = response.data.totalItems;
-                    console.log(JSON.stringify(response) + " zzzzzzzzzzzzzzzzzzzzzzz")
-
                 }, function (error) {
                     console.log(error + " error  during service call");
                     $scope.errorMessage = 'Error occured! ' + error;
                     $scope.posts = [];
                 }).finally(function () {
-                // $scope.loading = false;
+                $scope.loading = false;
             });
         }
 
         $scope.editContent = function editContent() {
             ContentService.updateContent($scope.content).then(
                 function (response) {
-                    console.log('responseeeeeeeeeee ' + JSON.stringify(response));
+                    console.log('updated content is ' + JSON.stringify(response));
                     if (response == 'undefined' || response.data.note != null || response.data.note != '') {
                         $scope.errorMessage = 'Error occured! ' + response.data.note;
                     }
@@ -135,7 +132,6 @@ angular.module('taskManagerApp').controller('ContentController',
 
 
         $scope.selectRow = function (content) {
-            console.log(JSON.stringify(content) + " ---------------------");
             $scope.content = content;
             $scope.showSingleView = true;
         };
