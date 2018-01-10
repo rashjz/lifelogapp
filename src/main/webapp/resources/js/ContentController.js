@@ -12,26 +12,18 @@ angular.module('taskManagerApp').controller('ContentController',
 
         getAllContentTypes();
 
-        $scope.froalaOptions = {
-            toolbarButtons: ['fullscreen', 'bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', '|', 'fontFamily', 'fontSize', 'color', 'inlineStyle', 'paragraphStyle', '|', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', 'quote', '-', 'insertLink', 'insertImage', 'insertVideo', 'embedly', 'insertFile', 'insertTable', '|', 'emoticons', 'specialCharacters', 'insertHR', 'selectAll', 'clearFormatting', '|', 'print', 'spellChecker', 'help', 'html', '|', 'undo', 'redo'],
-
-            // Set the image upload parameter.
-            // imageUploadParam: 'file',
-
-            // Set the image upload URL.
-            imageUploadURL: '/apiuser/uploadfroala/',
-
-            // Additional upload params.
-            imageUploadParams: {id: '12'},
-
-            // Set request type.
-            imageUploadMethod: 'POST',
-
-            // Set max image size to 5MB.
-            imageMaxSize: 5 * 1024 * 1024,
-
-            // Allow to upload PNG and JPG.
-            imageAllowedTypes: ['jpeg', 'jpg', 'png']
+        $scope.tinymceOptions = {
+            onChange: function(e) {
+                // put logic here for keypress and cut/paste changes
+            },
+            inline: false,
+            plugins: 'print preview fullpage searchreplace autolink directionality visualblocks visualchars fullscreen image link media template table hr pagebreak nonbreaking toc insertdatetime lists textcolor wordcount colorpicker ',
+            toolbar1: 'formatselect | bold italic strikethrough forecolor backcolor | link | alignleft aligncenter alignright alignjustify  | numlist bullist outdent indent  | removeformat image',
+            skin: 'lightgray',
+            theme : 'modern',
+            images_upload_url: '/apiuser/uploadfroala/',
+            // images_upload_base_path: '/some/basepath',
+            images_upload_credentials: true
         };
 
         // $scope.bodyIsReady = function () {

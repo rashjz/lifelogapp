@@ -1,20 +1,21 @@
 package rashjz.info.app.springboot.model;
 
 public class UploadResponse {
-    private String link;
+    private String location;
 
     public UploadResponse() {
     }
 
     public UploadResponse(String s) {
-        this.link = s;
+        this.location = s;
     }
 
-    public String getLink() {
-        return link;
+    public String getLocation() {
+        return location;
     }
 
-    public void setLink(String link) {
-        this.link = link;
+    public void setLocation(String location) {
+        this.location = location;
     }
+
 }

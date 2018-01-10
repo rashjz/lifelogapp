@@ -104,7 +104,7 @@
                         </div>
                         <div>
                             <label class="control-label" for="desc">Description</label>
-                            <textarea type="text" class="form-control" name="desc" id="desc"  froala="froalaOptions"
+                            <textarea type="text" class="form-control" name="desc" id="desc"  ui-tinymce="tinymceOptions"
                                       ng-model="content.description"></textarea>
                         </div>
                         <div>
@@ -180,17 +180,6 @@
     });
 </script>
 
-
-<!-- Include jQuery lib. -->
-<%--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>--%>
-
-
-<!-- Initialize the editor. -->
-<script>
-    $(function () {
-        $('textarea').froalaEditor()
-    });
-</script>
 
 
 <script type="application/javascript" src="${pageContext.request.contextPath}/resources/js/FileUpload.js"></script>

@@ -15,6 +15,7 @@
     <link rel="stylesheet" type="text/css"
           href="${pageContext.request.contextPath}/webjars/font-awesome/4.7.0/css/font-awesome.css"/>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.7.4/tinymce.min.js"></script>
 
     <script type="text/javascript" src="${pageContext.request.contextPath}/webjars/jquery/3.2.1/jquery.min.js"></script>
 
@@ -46,6 +47,10 @@
     <script type="text/javascript"
             src="${pageContext.request.contextPath}/webjars/angularjs/1.6.4/angular-loader.js"></script>
 
+    <script src="${pageContext.request.contextPath}/resources/js/tinymce/tinymce.js"></script>
+
+
+
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/lifelog-app.js"></script>
 
 
@@ -53,15 +58,6 @@
             src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
-    <script src="${pageContext.request.contextPath}/resources/js/froala/angular-froala.js"></script>
-
-    <!-- Include Editor style. -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.5.1/css/froala_editor.pkgd.min.css"
-          rel="stylesheet"
-          type="text/css"/>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.5.1/css/froala_style.min.css" rel="stylesheet"
-          type="text/css"/>
-
 
 </head>
 <body ng-cloak ng-app="taskManagerApp">
@@ -97,8 +93,8 @@
     </div>
 
     <!-- Include Editor JS files. -->
-    <script type="text/javascript"
-            src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.5.1//js/froala_editor.pkgd.min.js"></script>
+    <%--<script type="text/javascript"--%>
+            <%--src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.5.1//js/froala_editor.pkgd.min.js"></script>--%>
 
 </body>
 </html>
