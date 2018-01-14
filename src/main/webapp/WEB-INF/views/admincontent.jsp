@@ -1,3 +1,4 @@
+<%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <script type="text/ng-template" id="modal.html">
     <div class="modal-header">
         <h3 class="modal-title">Confirmation</h3>
@@ -10,14 +11,6 @@
         <button class="btn btn-danger" ng-click="cancel()">Cancel</button>
     </div>
 </script>
-
-<!-- Include CSS for icons. -->
-<%--<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />--%>
-
-
-
-<!-- Create a tag that we will use as the editable area. -->
-<!-- You can use a div tag as well. -->
 
 
 <div style="font-weight: bold;" class="container">

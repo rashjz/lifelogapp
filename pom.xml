@@ -7,9 +7,13 @@
     <groupId>lifelog.app</groupId>
     <artifactId>lifelog-app</artifactId>
     <version>1.0-SNAPSHOT</version>
-
+    <!--<configuration>-->
+        <!--<outputEncoding>UTF-8</outputEncoding>-->
+    <!--</configuration>-->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!--<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>-->
+
 
         <springframework.version>4.3.0.RELEASE</springframework.version>
         <hibernate.version>5.2.2.Final</hibernate.version>

@@ -24,7 +24,7 @@ import java.util.Properties;
  */
 @Configuration
 @EnableTransactionManagement
-@ComponentScan({"rashjz.info.app.springboot"})
+//@ComponentScan({"rashjz.info.app.springboot"})
 @PropertySource(value = {"classpath:application.properties"})
 public class HibernateConfiguration {
 
@@ -73,6 +73,10 @@ public class HibernateConfiguration {
         properties.put("hibernate.ejb.naming_strateg", environment.getRequiredProperty("spring.jpa.hibernate.naming-strategy"));
 //        properties.put("hibernate.enable_lazy_load_no_trans", "true");
         properties.put("hibernate.hbm2ddl.auto", environment.getRequiredProperty("spring.jpa.hibernate.ddl-auto"));
+
+        properties.put("hibernate.connection.useUnicode", environment.getRequiredProperty("hibernate.connection.useUnicode"));
+        properties.put("hibernate.connection.CharSet", environment.getRequiredProperty("hibernate.connection.CharSet"));
+        properties.put("hibernate.connection.characterEncoding", environment.getRequiredProperty("hibernate.connection.characterEncoding"));
 //        enable second level cache and query cache
 //        properties.put("hibernate.cache.region.factory_class", "org.hibernate.cache.ehcache.EhCacheRegionFactory");
 //        properties.put("hibernate.cache.region.factory_class", "org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory");

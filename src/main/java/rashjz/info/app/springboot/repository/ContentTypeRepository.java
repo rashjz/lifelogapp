@@ -12,7 +12,7 @@ import java.util.List;
 @Transactional
 public class ContentTypeRepository extends AbstractDao<Integer, ContentType> {
     @Override
-    protected Session getSession() {
+    public Session getSession() {
         return super.getSession();
     }
 

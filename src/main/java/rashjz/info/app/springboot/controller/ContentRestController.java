@@ -5,10 +5,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import rashjz.info.app.springboot.model.Content;
 import rashjz.info.app.springboot.model.LazyLoad;
 import rashjz.info.app.springboot.service.ContentService;
+
+import java.nio.charset.Charset;
 
 /**
  * Created by Rashad Javadov
@@ -41,10 +44,14 @@ public class ContentRestController {
     }
 
 
-    @PostMapping(value = "/contentupdate/")
+    @PostMapping(value = "/contentupdate/",
+            produces = MediaType.APPLICATION_JSON_VALUE,
+            consumes = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody
     Content addContent(@RequestBody Content content) {
         try {
+//            logger.info("content save method invoked ş "+content.getTitle());
+            System.out.println("content save method invoked ş "+content.getTitle());
             contentService.saveContent(content);
         }catch (Exception e){
             e.printStackTrace();

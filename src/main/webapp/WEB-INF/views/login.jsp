@@ -1,3 +1,4 @@
+<%@page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <div class="panel panel-primary">
     <div class="panel-heading">
         <div style="font-weight: bolder;" class="panel-title pull-left">

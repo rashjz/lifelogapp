@@ -33,6 +33,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private Environment environment;
 
+	@Autowired
+	DataSource dataSource;
+
 	@Value("${spring.queries.users-query}")
 	private String usersQuery;
 	
@@ -44,22 +47,22 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
 		return bCryptPasswordEncoder;
 	}
-	@Bean
-	public DataSource dataSource() {
-		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		dataSource.setDriverClassName(environment.getRequiredProperty("database.driverClassName"));
-		dataSource.setUrl(environment.getRequiredProperty("spring.datasource.url"));
-		dataSource.setUsername(environment.getRequiredProperty("spring.datasource.username"));
-		dataSource.setPassword(environment.getRequiredProperty("spring.datasource.password"));
-		return dataSource;
-	}
+//	@Bean
+//	public DataSource dataSource() {
+//		DriverManagerDataSource dataSource = new DriverManagerDataSource();
+//		dataSource.setDriverClassName(environment.getRequiredProperty("database.driverClassName"));
+//		dataSource.setUrl(environment.getRequiredProperty("spring.datasource.url"));
+//		dataSource.setUsername(environment.getRequiredProperty("spring.datasource.username"));
+//		dataSource.setPassword(environment.getRequiredProperty("spring.datasource.password"));
+//		return dataSource;
+//	}
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.
 			jdbcAuthentication()
 				.usersByUsernameQuery(usersQuery)
 				.authoritiesByUsernameQuery(rolesQuery)
-				.dataSource(dataSource())
+				.dataSource(dataSource)
 				.passwordEncoder(passwordEncoder());
 	}
 
