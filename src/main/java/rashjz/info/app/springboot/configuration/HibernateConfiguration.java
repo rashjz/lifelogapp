@@ -24,7 +24,6 @@ import java.util.Properties;
  */
 @Configuration
 @EnableTransactionManagement
-//@ComponentScan({"rashjz.info.app.springboot"})
 @PropertySource(value = {"classpath:application.properties"})
 public class HibernateConfiguration {
 
@@ -37,7 +36,6 @@ public class HibernateConfiguration {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource());
         em.setPackagesToScan(new String[] { "rashjz.info.app.springboot" });
-
         JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         em.setJpaVendorAdapter(vendorAdapter);
         em.setJpaProperties(hibernateProperties());

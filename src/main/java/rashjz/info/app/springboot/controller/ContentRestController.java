@@ -6,12 +6,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.MediaType;
+import org.springframework.security.crypto.codec.Utf8;
 import org.springframework.web.bind.annotation.*;
 import rashjz.info.app.springboot.model.Content;
 import rashjz.info.app.springboot.model.LazyLoad;
 import rashjz.info.app.springboot.service.ContentService;
+import sun.awt.CharsetString;
 
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 
 /**
  * Created by Rashad Javadov
@@ -45,17 +48,17 @@ public class ContentRestController {
 
 
     @PostMapping(value = "/contentupdate/",
-            produces = MediaType.APPLICATION_JSON_VALUE,
-            consumes = MediaType.APPLICATION_JSON_VALUE)
+            produces = MediaType.APPLICATION_JSON_UTF8_VALUE,
+            consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public @ResponseBody
     Content addContent(@RequestBody Content content) {
         try {
 //            logger.info("content save method invoked ş "+content.getTitle());
-            System.out.println("content save method invoked ş "+content.getTitle());
+            System.out.println("content save method invoked ş " + content.getDescription());
             contentService.saveContent(content);
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-            logger.error("Error while saving data "+e.getMessage());
+            logger.error("Error while saving data " + e.getMessage());
             content.setNote(e.toString());
         }
 
@@ -64,11 +67,11 @@ public class ContentRestController {
 
     @DeleteMapping(value = "/contentdelete/{id}")
     public void deleteContent(@PathVariable(value = "id") long id) {
-       try {
-           contentService.deleteContentById(Long.valueOf(id));
-       }catch (Exception e){
-           e.printStackTrace();
-       }
+        try {
+            contentService.deleteContentById(Long.valueOf(id));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @GetMapping(value = "/content/{id}")

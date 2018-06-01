@@ -1,16 +1,18 @@
 package rashjz.info.app.springboot.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
-
+@JsonDeserialize()
 @Entity
 @Table(name = "content", schema = "lifelog")
-public class Content {
+public class Content implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "content_id")
